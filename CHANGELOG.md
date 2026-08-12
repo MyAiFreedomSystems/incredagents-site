@@ -17,8 +17,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   preserved as `PIPELINE.md`); thorough About descriptions; 10 validated
   topics on the site repo; homepage + topics set on all public skill repos;
   empty descriptions filled for harvest-testimonials and graphic-testimonials;
-  org profile README published at MyAiFreedomSystems/.github. Known manual
-  step: social preview images (1280×640) are web-UI-only per GitHub — no API.
+  org profile README published at MyAiFreedomSystems/.github.
+- Social preview images (1280×640, branded navy/gold with each skill's SVG
+  logo) set on all six public repos (incredagents-site, harvest-testimonials,
+  graphic-testimonials, testimonial-display, logo-theme-manager, incredagents).
+  GitHub exposes no API for this, so the images were attached through the
+  owner's real browser via WebBridge base64 injection into the repo settings
+  upload control; each repo's og:image now resolves to its own
+  repository-images.githubusercontent.com URL.
 - New skill: `pre-flight-check` — the mandatory pre-delivery quality gate
   distilled from this project's own review history. Truth check (nothing
   fabricated, examples labeled), copy pass, visual verification at 1440px and
