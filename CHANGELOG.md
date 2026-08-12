@@ -7,6 +7,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- GitHub Pages: the catalog is live at
+  https://myaifreedomsystems.github.io/incredagents-site/ via a workflow that
+  deploys `site/` on every push to main.
+- Repo presentation pass, modeled on a study of top GitHub repos
+  (microsoft/generative-ai-for-beginners, anthropics/skills, awesome-list):
+  visitor-facing README with live-site banner, badge row, catalog preview,
+  skill tables cross-linking every repo to its page and back (pipeline doc
+  preserved as `PIPELINE.md`); thorough About descriptions; 10 validated
+  topics on the site repo; homepage + topics set on all public skill repos;
+  empty descriptions filled for harvest-testimonials and graphic-testimonials;
+  org profile README published at MyAiFreedomSystems/.github. Known manual
+  step: social preview images (1280×640) are web-UI-only per GitHub — no API.
 - New skill: `pre-flight-check` — the mandatory pre-delivery quality gate
   distilled from this project's own review history. Truth check (nothing
   fabricated, examples labeled), copy pass, visual verification at 1440px and
