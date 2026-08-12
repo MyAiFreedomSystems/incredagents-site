@@ -1,0 +1,12 @@
+.DS_Store
+node_modules/
+__pycache__/
+*.pyc
+.env
+.env.*
+# Staged zips are build artifacts; the folders beside them are the source of truth
+releases/*.skill
+releases/*.zip
+# Local version snapshots stay on this machine — git history is the public record.
+# (Also keeps the archived real-person demo assets in versions/v15-assets-attic/ private.)
+versions/

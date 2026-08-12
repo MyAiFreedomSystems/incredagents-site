@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brief-Me · IncredAgents Skills | One command. Six voices. You decide.</title>
+<meta name="description" content="Type /brief-me and six specialist voices read your whole session, argue until they agree, and hand you one page of named decisions. Your agent gets no vote.">
+<link rel="icon" type="image/png" href="../assets/incredagents-logo.png">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+<nav>
+  <a class="nav-brand" href="../index.html"><img class="brand-logo" src="../assets/incredagents-logo.png" alt="IncredAgents logo">IncredAgents</a>
+  <div class="nav-links">
+    <a href="../index.html#skills">All Skills</a>
+    <a class="nav-cta" href="https://github.com/MyAiFreedomSystems/incredagents/tree/main/brief-me">GitHub</a>
+  </div>
+</nav>
+
+<header class="skill-hero">
+  <img class="skill-badge reveal" src="../assets/skill-brief-me.svg" alt="Brief-Me logo">
+  <p class="eyebrow eyebrow-gold reveal">Inside The IncredAgents Mod Pack</p>
+  <h1 class="skill-title">
+    <span class="w" style="--i:0">Stop</span> <span class="w" style="--i:1">reading</span> <span class="w" style="--i:2">walls</span> <span class="w" style="--i:3">of</span> <span class="w" style="--i:4">AI</span> <span class="w" style="--i:5">text.</span>
+    <span class="w" style="--i:6">Get</span> <span class="w" style="--i:7">the</span> <span class="w script-accent" style="--i:8">brief.</span>
+  </h1>
+  <p class="skill-sub reveal" style="--d:.4s">Type <code>/brief-me</code> at the end of any working session. Six specialist voices read the entire conversation, argue it out until every one of them agrees, and hand you a single page of decisions — each with named options. The orchestrator assembles all of it. It gets no say in any of it.</p>
+  <figure class="skill-art reveal" style="--d:.25s">
+    <img src="../assets/brief-me-art.svg" alt="A Brief-Me advisory page: a grid of decision cards, each with named radio options and the voice that proposed them">
+  </figure>
+  <div class="hero-actions reveal" style="--d:.5s">
+    <a class="btn btn-pulse" href="https://github.com/MyAiFreedomSystems/incredagents/tree/main/brief-me">Get It On GitHub →</a>
+    <a class="btn ghost" href="../index.html#skills">Back To All Skills</a>
+  </div>
+</header>
+
+<section class="section-light">
+  <p class="eyebrow">The interface</p>
+  <h2>One command. That's the whole interface.</h2>
+  <p class="section-lead">No flags. No arguments. No settings file. The conversation you just had is the input — the skill reads all of it, so you never re-explain anything.</p>
+
+  <div class="terminal reveal">
+    <div class="term-bar">
+      <span class="term-dot td-gold"></span><span class="term-dot"></span><span class="term-dot"></span>
+      <span class="term-title">your agent — end of any session</span>
+    </div>
+    <div class="term-body">
+      <p class="term-comment"># you just finished a long working session. type one thing:</p>
+      <p><span class="prompt">></span> <span class="cmd-flash">/brief-me</span></p>
+      <p class="term-comment"># six voices read the whole conversation, converge, then render</p>
+      <p class="term-comment"># your brief as its own clean page — cards, not a wall of chat text.</p>
+      <p><span class="prompt">></span> <span class="block-cursor"></span></p>
+    </div>
+  </div>
+</section>
+
+<section class="section-light">
+  <p class="eyebrow">How it thinks</p>
+  <h2>Six voices read your session. Then they have to agree.</h2>
+  <p class="section-lead">Every brief is assembled from six required lenses. Each one looks at a different part of your work — and each verdict on the page names the voice that produced it, so nothing is anonymous.</p>
+
+  <div class="voice-grid">
+    <article class="voice-card tone-terra reveal">
+      <h3>The Researcher</h3>
+      <p class="voice-lens">Pattern recognition</p>
+      <p>Reads everything you found and names the connections across it — the pattern you were too close to see.</p>
+    </article>
+    <article class="voice-card tone-sage reveal" style="--d:.08s">
+      <h3>The Advisor</h3>
+      <p class="voice-lens">Synthesis</p>
+      <p>Thinks two weeks ahead. Second-order risks, what this decision sets in motion, what you'll wish you'd known.</p>
+    </article>
+    <article class="voice-card tone-slate reveal" style="--d:.16s">
+      <h3>Kaizen One</h3>
+      <p class="voice-lens">Consolidation</p>
+      <p>Looks for the waste — the friction this cuts, the steps it deletes, the drag it removes from every future session.</p>
+    </article>
+    <article class="voice-card tone-terra reveal" style="--d:.24s">
+      <h3>Kaizen Two</h3>
+      <p class="voice-lens">Risk</p>
+      <p>Asks the uncomfortable question: what breaks, and what does it cost to unbreak it?</p>
+    </article>
+    <article class="voice-card tone-sage reveal" style="--d:.32s">
+      <h3>The Linter</h3>
+      <p class="voice-lens">Correctness</p>
+      <p>Checks the work itself against the rules — violations, drift, anything that doesn't match the format you asked for.</p>
+    </article>
+    <article class="voice-card tone-slate reveal" style="--d:.4s">
+      <h3>The Builder</h3>
+      <p class="voice-lens">Implementation</p>
+      <p>Gets practical: which files, in what order, and what it costs in time to actually do the thing.</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-light">
+  <p class="eyebrow">The rules that protect you</p>
+  <h2>Split jobs. No off-the-record thinking.</h2>
+  <p class="section-lead">Brief-Me splits the work in two: the orchestrator delegates, the voices do the thinking. Hard rules keep each side in its lane.</p>
+
+  <div class="truth-grid">
+    <article class="truth-card reveal">
+      <h3>The Orchestrator Gets No Vote.</h3>
+      <p>Its whole job is delegation — dispatch the six voices, collect their verdicts, assemble the page. It inserts no opinion, no ranking, no quiet pick of its own. If a voice didn't say it, the topic isn't on the page. Absent, never invented.</p>
+    </article>
+    <article class="truth-card reveal" style="--d:.1s">
+      <h3>No Split Decisions Land On Your Desk.</h3>
+      <p>If voices disagree, the dissenter gets re-dispatched with the others' arguments until every voice passes. A split tally is a status report dressed as a deliverable — you never see one. True deadlock? You get it as one question to break. Never a scoreboard.</p>
+    </article>
+    <article class="truth-card reveal" style="--d:.2s">
+      <h3>Plain Speak. Real Numbers. Your Call.</h3>
+      <p>Every card is one question in plain sentences — no jargon. Every option names the voice that proposed it, and "Other — I'll write my own" is always there. Names, numbers, and dollar amounts where they exist, because a fact you can check beats an adjective you can't.</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-light">
+  <p class="eyebrow">Get started</p>
+  <h2>Two minutes to install. One word to run.</h2>
+  <p class="section-lead">Brief-Me ships inside the IncredAgents mod pack. One installer wires in the whole pack and asks only for the keys each skill needs.</p>
+
+  <div class="terminal reveal">
+    <div class="term-bar">
+      <span class="term-dot td-gold"></span><span class="term-dot"></span><span class="term-dot"></span>
+      <span class="term-title">your machine — three commands</span>
+    </div>
+    <div class="term-body">
+      <p><span class="prompt">$</span> git clone https://github.com/MyAiFreedomSystems/incredagents.git</p>
+      <p><span class="prompt">$</span> cd incredagents</p>
+      <p><span class="prompt">$</span> python3 onboard.py</p>
+      <p class="term-comment"># finish any working session, then tell your agent:</p>
+      <p class="term-say">"/brief-me"</p>
+      <p><span class="prompt">$</span> <span class="block-cursor"></span></p>
+    </div>
+    <p class="term-foot">Just want this one skill? Grab the <a href="https://github.com/MyAiFreedomSystems/incredagents/tree/main/brief-me">brief-me folder</a> straight from the repo.</p>
+  </div>
+</section>
+
+<div class="cta-band">
+  <h2>Your next session could end with a brief, not a scroll.</h2>
+  <p>Clone the pack, run the installer, and end tonight's session with one page of decisions waiting for you.</p>
+  <a class="btn" href="https://github.com/MyAiFreedomSystems/incredagents/tree/main/brief-me">Get Brief-Me On GitHub →</a>
+</div>
+
+<footer>
+  <img class="foot-brand-logo" src="../assets/incredagents-logo.png" alt="IncredAgents logo">
+  <span class="foot-brand">IncredAgents</span>
+  <p>Built by <a href="https://github.com/MyAiFreedomSystems">My AI Freedom Systems</a></p>
+  <p class="foot-eco"><a href="https://freedomaios.com"><img class="foot-logo foot-logo-v2" src="../assets/freedomaios-logo.png" alt="FreedomAIOS logo — Take the road less traveled">Part of the FreedomAIOS ecosystem</a></p>
+  <p style="margin-top:8px;">Every skill is scrubbed of personal data before it ships. Every word attributed to a person is their real words, from a real source.</p>
+  <p class="site-version">Site v18</p>
+</footer>
+
+<script>
+const io = new IntersectionObserver((entries) => {
+  entries.forEach((e) => {
+    if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
+  });
+}, { threshold: 0.15 });
+document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
+</script>
+
+</body>
+</html>

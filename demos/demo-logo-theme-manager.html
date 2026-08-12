@@ -1,0 +1,47 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><style>
+:root{--navy:#1b3a5c;--navy2:#122a45;--cream:#fafaf8;--gold:#d9a441;--ink:#22303f;--muted:#5a7292;
+--terra:#c9825d;--sage:#8ba888;--slate:#7f96b8;}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Helvetica,Arial,sans-serif;background:var(--cream);color:var(--ink);padding:34px 40px;line-height:1.55}
+h1{font-family:Georgia,serif;font-style:italic;font-weight:400;color:var(--navy);font-size:30px;margin-bottom:4px}
+h2{font-family:Georgia,serif;font-style:italic;font-weight:400;color:var(--navy);font-size:21px;margin:22px 0 10px}
+.kick{font-size:11px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+.mono{font-family:Menlo,monospace}
+.term{background:linear-gradient(160deg,#1b3a5c,#122a45);border-radius:12px;padding:20px 24px;color:#dbe5ef;
+font-family:Menlo,monospace;font-size:13.5px;line-height:1.75;border-top:4px solid var(--gold)}
+.term .p{color:var(--gold)} .term .c{color:#8fa3b8} .term .ok{color:#9dc08b} .term .bad{color:#d98c7a}
+.card{background:#fff;border-radius:12px;box-shadow:0 6px 24px rgba(27,58,92,.12);padding:18px 22px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px}
+table{width:100%;border-collapse:collapse;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 6px 24px rgba(27,58,92,.12);font-size:14px}
+th{background:var(--navy);color:#fff;text-align:left;padding:10px 14px;font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+td{padding:10px 14px;border-top:1px solid #e8e4da}
+.tag{display:inline-block;font-size:10.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:3px 10px;border-radius:999px}
+.tag-gold{background:rgba(217,164,65,.16);color:#8a6414}.tag-ok{background:rgba(139,168,136,.2);color:#4a6b47}
+.tag-terra{background:rgba(201,130,93,.18);color:#8a4f30}.tag-slate{background:rgba(127,150,184,.2);color:#46586e}
+.check{color:#4a6b47;font-weight:700}
+.rule{border-left:4px solid var(--gold);padding:4px 0 4px 14px;margin:10px 0}
+.note{color:var(--muted);font-size:13px;margin-top:6px}
+.tree{font-family:Menlo,monospace;font-size:13.5px;line-height:1.7;background:#fff;border-radius:12px;padding:18px 22px;box-shadow:0 6px 24px rgba(27,58,92,.12)}
+</style></head>
+<body><p class="kick">Actual output · generated per the skill's own spec</p><h1>One Manifest. Every Logo. Zero Drift.</h1>
+<div class="grid2" style="margin-top:14px">
+<div class="term">
+<p><span class="p">$</span> python scripts/update-logo.py --manifest logo-manifest.json --check</p>
+<p class="ok">OK&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;site/assets/logo-transparent.png</p>
+<p class="ok">OK&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;site/assets/favicon.ico</p>
+<p class="ok">OK&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;site/assets/apple-touch-icon-180.png</p>
+<p class="bad">DRIFTED&nbsp;clone-landing/assets/logo.png</p>
+<p class="bad">MISSING&nbsp;email-template/header-logo.png</p>
+<p class="c"># exit code 1 — nothing ships until this is green</p>
+<p>&nbsp;</p>
+<p><span class="p">$</span> python scripts/update-logo.py --replace new-logo.png</p>
+<p class="ok">✓ transparent master → 32/180/192/512 + favicon.ico</p>
+<p class="ok">✓ copied over every manifest location · hashes rewritten</p>
+</div>
+<div>
+<div class="card"><p class="kick">theme.css — the only place brand lives</p>
+<p class="mono" style="font-size:13px;line-height:1.8">:root {<br>&nbsp;&nbsp;--color-primary: #2E5BFF;<br>&nbsp;&nbsp;--color-accent: #FFB020;<br>&nbsp;&nbsp;--font-heading: "Inter", sans-serif;<br>&nbsp;&nbsp;--logo-url: url("./logo-transparent.png");<br>}</p></div>
+<div class="card" style="margin-top:14px"><p style="font-size:14px">The manifest is <b>crawled, never handwritten</b> — it finds every logo and favicon copy across the project (and its clones), fingerprints each with sha256, and anything it found that you didn't know about is exactly the file that gets missed at rebrand time.</p></div>
+</div>
+</div></body></html>

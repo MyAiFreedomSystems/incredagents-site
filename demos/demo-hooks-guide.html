@@ -1,0 +1,49 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><style>
+:root{--navy:#1b3a5c;--navy2:#122a45;--cream:#fafaf8;--gold:#d9a441;--ink:#22303f;--muted:#5a7292;
+--terra:#c9825d;--sage:#8ba888;--slate:#7f96b8;}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Helvetica,Arial,sans-serif;background:var(--cream);color:var(--ink);padding:34px 40px;line-height:1.55}
+h1{font-family:Georgia,serif;font-style:italic;font-weight:400;color:var(--navy);font-size:30px;margin-bottom:4px}
+h2{font-family:Georgia,serif;font-style:italic;font-weight:400;color:var(--navy);font-size:21px;margin:22px 0 10px}
+.kick{font-size:11px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+.mono{font-family:Menlo,monospace}
+.term{background:linear-gradient(160deg,#1b3a5c,#122a45);border-radius:12px;padding:20px 24px;color:#dbe5ef;
+font-family:Menlo,monospace;font-size:13.5px;line-height:1.75;border-top:4px solid var(--gold)}
+.term .p{color:var(--gold)} .term .c{color:#8fa3b8} .term .ok{color:#9dc08b} .term .bad{color:#d98c7a}
+.card{background:#fff;border-radius:12px;box-shadow:0 6px 24px rgba(27,58,92,.12);padding:18px 22px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px}
+table{width:100%;border-collapse:collapse;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 6px 24px rgba(27,58,92,.12);font-size:14px}
+th{background:var(--navy);color:#fff;text-align:left;padding:10px 14px;font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+td{padding:10px 14px;border-top:1px solid #e8e4da}
+.tag{display:inline-block;font-size:10.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:3px 10px;border-radius:999px}
+.tag-gold{background:rgba(217,164,65,.16);color:#8a6414}.tag-ok{background:rgba(139,168,136,.2);color:#4a6b47}
+.tag-terra{background:rgba(201,130,93,.18);color:#8a4f30}.tag-slate{background:rgba(127,150,184,.2);color:#46586e}
+.check{color:#4a6b47;font-weight:700}
+.rule{border-left:4px solid var(--gold);padding:4px 0 4px 14px;margin:10px 0}
+.note{color:var(--muted);font-size:13px;margin-top:6px}
+.tree{font-family:Menlo,monospace;font-size:13.5px;line-height:1.7;background:#fff;border-radius:12px;padding:18px 22px;box-shadow:0 6px 24px rgba(27,58,92,.12)}
+</style></head>
+<body><p class="kick">Actual output · generated per the skill's own spec</p><h1>Hooks — Governance Inside The Agent's Loop</h1>
+<div class="grid2" style="margin-top:14px">
+<div class="term">
+<p class="c"># pre_tool_use — the gate fires BEFORE the tool runs</p>
+<p>&gt; tool: write_file → path: ~/governance/CONSTITUTION.md</p>
+<p class="bad">{"action":"block",</p>
+<p class="bad"> "message":"Protected path. Escalate to the owner."}</p>
+<p>&nbsp;</p>
+<p class="c"># post_tool_use — silent audit, never slows the agent</p>
+<p>{"ts":"14:02:11","tool":"write_file","ok":true,"ms":42}</p>
+<p>{"ts":"14:02:13","tool":"terminal","ok":true,"ms":318}</p>
+</div>
+<div>
+<div class="card"><p class="kick">Safety rules, universal</p>
+<p style="font-size:14px">▸ <b>Fail-open</b> — a crashed hook never deadlocks the agent<br>
+▸ <b>Kill-switch</b> — one sentinel file bypasses everything<br>
+▸ <b>Idempotent</b> — same input, same result, twice<br>
+▸ <b>Timeout-bounded</b> — 5s and it's considered hung<br>
+▸ <b>No network in pre_tool_use</b> — it fires hundreds of times a session</p></div>
+<div class="card" style="margin-top:14px"><p class="kick">Per-platform adapters</p>
+<p style="font-size:14px">Hermes, Claude Code, Codex, Cursor, OpenCode, Continue, Aider, Cline — what each platform actually supports, and the manual workarounds (rule files, wrapper scripts, pre-commit hooks) for the ones with no native hooks.</p></div>
+</div>
+</div></body></html>

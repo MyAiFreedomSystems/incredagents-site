@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Logo-Theme-Manager · IncredAgents Skills</title>
+<meta name="description" content="Build a true token-based theme system and a sha256-tracked logo manifest — replace every logo and favicon across every project in one command.">
+<link rel="icon" type="image/png" href="../assets/incredagents-logo.png">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+<nav>
+  <a class="nav-brand" href="../index.html"><img class="brand-logo" src="../assets/incredagents-logo.png" alt="IncredAgents logo">IncredAgents</a>
+  <div class="nav-links">
+    <a href="../index.html#skills">All Skills</a>
+    <a class="nav-cta" href="https://github.com/MyAiFreedomSystems/logo-theme-manager">GitHub</a>
+  </div>
+</nav>
+
+<header class="skill-hero">
+  <img class="skill-badge reveal" src="../assets/skill-theme.svg" alt="Logo-Theme-Manager logo">
+  <p class="eyebrow eyebrow-gold reveal">Standalone Skill</p>
+  <h1 class="skill-title"><span class="w" style="--i:0">One</span> <span class="w" style="--i:1">file</span> <span class="w" style="--i:2">rules</span> <span class="w" style="--i:3">your</span> <span class="w" style="--i:4">whole</span> <span class="w script-accent" style="--i:5">brand.</span></h1>
+  <p class="skill-sub reveal" style="--d:.4s">AI site builders scatter hex codes across pages and paste logos into random folders. Then the brand changes and updating the site becomes a scavenger hunt. This skill ends that — one token file, one manifest, one command to replace everything.</p>
+  <figure class="skill-art reveal" style="--d:.25s">
+    <img src="../assets/demo-logo-theme-manager.png" alt="The skill's integrity check output — OK, DRIFTED, and MISSING per file — plus the one-command replace">
+  </figure>
+  <div class="hero-actions reveal" style="--d:.5s">
+    <a class="btn btn-pulse" href="https://github.com/MyAiFreedomSystems/logo-theme-manager">Get It On GitHub →</a>
+    <a class="btn ghost" href="../index.html#skills">Back To All Skills</a>
+  </div>
+</header>
+
+<section class="section-light">
+  <p class="eyebrow">The problem it kills</p>
+  <h2>The Rebrand Scavenger Hunt Is Over.</h2>
+  <p class="section-lead">Some files get replaced, some don't, and nobody notices the missed ones until a customer does. This skill makes that failure structurally impossible.</p>
+  <div class="truth-grid"><article class="truth-card reveal"><h3>One Token File.</h3><p>Every color, font, radius, and the logo itself live in a single theme.css as CSS variables. Pages consume tokens — inline hex codes are treated as bugs and hunted down with grep.</p></article><article class="truth-card reveal" style="--d:0.1s"><h3>A Manifest With Fingerprints.</h3><p>Every copy of your logo and favicon set — across the project and its clones — crawled, cataloged, and sha256-fingerprinted. The crawler finds files you forgot existed.</p></article><article class="truth-card reveal" style="--d:0.2s"><h3>Check Proves It. Replace Fixes It.</h3><p>--check prints OK, MISSING, or DRIFTED per file and fails the build if anything's wrong. --replace regenerates the whole set — transparent master, four PNG sizes, multi-size favicon — and writes it over every location in one command.</p></article></div>
+</section>
+<section class="section-light">
+  <p class="eyebrow">Details that matter</p>
+  <h2>Built For The Real World.</h2>
+  <p class="section-lead">Dry-run by default. Explicit background keying when your logo isn't on white. Git commits if you ask — never pushes. And honest fallbacks when the environment is constrained.</p>
+  <div class="truth-grid"><article class="truth-card reveal"><h3>Nothing Writes Without A Preview.</h3><p>--dry-run shows exactly what a replace would touch before it touches anything.</p></article><article class="truth-card reveal" style="--d:0.1s"><h3>The Full Identity Set.</h3><p>favicon.ico, 32px, apple-touch-180, 192, 512 — generated, not hand-cropped — plus Organization JSON-LD so search engines get the canonical logo.</p></article><article class="truth-card reveal" style="--d:0.2s"><h3>No Pillow? It Tells You The Path.</h3><p>Constrained agents get the manual route spelled out — and the skill never claims a replace it couldn't execute.</p></article></div>
+</section>
+
+<section class="section-light">
+  <p class="eyebrow">Get started</p>
+  <h2>Your Next Rebrand Takes One Command.</h2>
+  <p class="section-lead">Clone it, crawl your project once, and never hunt a stray hex code again.</p>
+  
+  <div class="terminal reveal">
+    <div class="term-bar">
+      <span class="term-dot td-gold"></span><span class="term-dot"></span><span class="term-dot"></span>
+      <span class="term-title">your machine — one command</span>
+    </div>
+    <div class="term-body"><p><span class="prompt">$</span> git clone https://github.com/MyAiFreedomSystems/logo-theme-manager.git</p><p><span class="term-comment"># drop the folder in your agent's skills directory. done.</span></p></div>
+    
+  </div>
+</section>
+<div class="cta-band">
+  <h2>Make your brand change-proof.</h2>
+  <p>The next logo swap is either one command or a scavenger hunt. Pick.</p>
+  <a class="btn" href="https://github.com/MyAiFreedomSystems/logo-theme-manager">Get Logo-Theme-Manager On GitHub →</a>
+</div>
+
+<footer>
+  <img class="foot-brand-logo" src="../assets/incredagents-logo.png" alt="IncredAgents logo">
+  <span class="foot-brand">IncredAgents</span>
+  <p>Built by <a href="https://github.com/MyAiFreedomSystems">My AI Freedom Systems</a></p>
+  <p class="foot-eco"><a href="https://freedomaios.com"><img class="foot-logo foot-logo-v2" src="../assets/freedomaios-logo.png" alt="FreedomAIOS logo — Take the road less traveled">Part of the FreedomAIOS ecosystem</a></p>
+  <p style="margin-top:8px;">Every skill is scrubbed of personal data before it ships. Every word attributed to a person is their real words, from a real source.</p>
+  <p class="site-version">Site v18</p>
+</footer>
+
+<script>
+const io = new IntersectionObserver((entries) => {
+  entries.forEach((e) => {
+    if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
+  });
+}, { threshold: 0.15 });
+document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
+</script>
+
+</body>
+</html>

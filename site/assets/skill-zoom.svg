@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96">
+  <rect x="4" y="4" width="88" height="88" rx="20" fill="#122a45" stroke="#d9a441" stroke-width="4"/>
+  <!-- video camera -->
+  <rect x="20" y="24" width="34" height="24" rx="6" fill="none" stroke="#fafaf8" stroke-width="5"/>
+  <path d="M54 32l16-8v24l-16-8" fill="none" stroke="#fafaf8" stroke-width="5" stroke-linejoin="round"/>
+  <!-- transcript lines -->
+  <path d="M22 62h52M22 72h36" fill="none" stroke="#d9a441" stroke-width="5" stroke-linecap="round"/>
+  <!-- download tick -->
+  <path d="M64 66l4 4 8-8" fill="none" stroke="#d9a441" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

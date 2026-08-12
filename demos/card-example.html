@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+@font-face { font-family: "Yellowtail"; src: url("file:///Users/alethea/Documents/kimi/workspace/SkillManager_Public/site/assets/Yellowtail-Regular.ttf") format("truetype"); }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  width: 1080px; height: 1080px;
+  background: radial-gradient(circle at 50% 32%, #24507c 0%, #1b3a5c 45%, #122a45 100%);
+  display: flex; flex-direction: column; align-items: center;
+  font-family: Helvetica, Arial, sans-serif;
+}
+.portrait {
+  width: 240px; height: 240px; border-radius: 50%; margin-top: 120px;
+  background: #122a45; border: 8px solid #d9a441; overflow: hidden;
+}
+.portrait img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; }
+.stars { margin-top: 44px; display: flex; gap: 12px; }
+.stars svg { width: 52px; height: 52px; fill: #d9a441; }
+h1 {
+  margin-top: 26px; color: #ffffff; font-size: 64px; font-weight: 800;
+  letter-spacing: 0.5px;
+}
+.quote {
+  margin-top: 30px; max-width: 860px; text-align: center;
+  font-family: Georgia, serif; font-style: italic; font-size: 33px;
+  line-height: 1.5; color: #fafaf8; padding: 0 60px;
+}
+.who { margin-top: auto; margin-bottom: 90px; text-align: center; }
+.name { font-family: "Yellowtail", cursive; font-size: 58px; color: #fafaf8; }
+.org { margin-top: 6px; font-size: 26px; letter-spacing: 3px; text-transform: uppercase; color: #9fb0c3; }
+</style>
+</head>
+<body>
+  <div class="portrait"><img src="../site/assets/example-persona-photo.png" alt="Danielle Ruiz"></div>
+  <div class="stars">
+    <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg>
+    <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg>
+    <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg>
+    <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg>
+    <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg>
+  </div>
+  <h1>Testimonial</h1>
+  <p class="quote">"We used to lose two custom cake orders a week to chaos. We haven't missed a single one in three months — and my weekends are back."</p>
+  <div class="who">
+    <div class="name">Danielle Ruiz</div>
+    <div class="org">Blue Door Bakery</div>
+  </div>
+</body>
+</html>

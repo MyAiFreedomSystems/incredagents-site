@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Routing-Matrix · IncredAgents Skills</title>
+<meta name="description" content="Multi-model routing configuration — roles, fallback chains, provider lanes, and diversity policies, as a fillable YAML template.">
+<link rel="icon" type="image/png" href="../assets/incredagents-logo.png">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+<nav>
+  <a class="nav-brand" href="../index.html"><img class="brand-logo" src="../assets/incredagents-logo.png" alt="IncredAgents logo">IncredAgents</a>
+  <div class="nav-links">
+    <a href="../index.html#skills">All Skills</a>
+    <a class="nav-cta" href="https://github.com/MyAiFreedomSystems/incredagents/tree/main/routing-matrix">GitHub</a>
+  </div>
+</nav>
+
+<header class="skill-hero">
+  <img class="skill-badge reveal" src="../assets/skill-routing-matrix.svg" alt="Routing-Matrix logo">
+  <p class="eyebrow eyebrow-gold reveal">Inside The IncredAgents Mod Pack</p>
+  <h1 class="skill-title"><span class="w" style="--i:0">Every</span> <span class="w" style="--i:1">task</span> <span class="w" style="--i:2">routed</span> <span class="w" style="--i:3">to</span> <span class="w" style="--i:4">the</span> <span class="w" style="--i:5">right</span> <span class="w script-accent" style="--i:6">model.</span></h1>
+  <p class="skill-sub reveal" style="--d:.4s">A fill-in-the-blanks YAML that maps your models onto agent roles — with fallback chains, provider lanes, ban lists, and policies that force perspective diversity. Ships as a template: the structure and governance are pre-built, you fill in your models.</p>
+  <figure class="skill-art reveal" style="--d:.25s">
+    <img src="../assets/demo-routing-matrix.png" alt="A routing matrix YAML with role assignments, fallback chains, and policies — plus the validator passing">
+  </figure>
+  <div class="hero-actions reveal" style="--d:.5s">
+    <a class="btn btn-pulse" href="https://github.com/MyAiFreedomSystems/incredagents/tree/main/routing-matrix">Get It On GitHub →</a>
+    <a class="btn ghost" href="../index.html#skills">Back To All Skills</a>
+  </div>
+</header>
+
+<section class="section-light">
+  <p class="eyebrow">The structure</p>
+  <h2>Ten Roles. One Sequence. Zero Guesswork.</h2>
+  <p class="section-lead">Orchestrator, three advisors with distinct lenses, builder, QA, linter, two kaizen passes, and a logger — each with a primary model, a provider lane, and an ordered fallback chain.</p>
+  <div class="truth-grid"><article class="truth-card reveal"><h3>Fallbacks That Walk Themselves.</h3><p>Provider down, rate-limited, context window too small — the dispatcher walks the chain in order. Everything exhausted? It aborts with a list of every model tried and why each failed.</p></article><article class="truth-card reveal" style="--d:0.1s"><h3>Every Provider Lane.</h3><p>OpenAI, Anthropic, Google, DeepSeek, OpenRouter, local Ollama, Apple Silicon MLX, or your own custom lane — the matrix doesn't care where the model lives.</p></article><article class="truth-card reveal" style="--d:0.2s"><h3>A Validator, Not A Prayer.</h3><p>A script checks your filled matrix against the schema — missing fields, duplicate roles, malformed chains, banned models accidentally assigned. Green or it doesn't route.</p></article></div>
+</section>
+<section class="section-light">
+  <p class="eyebrow">The policies</p>
+  <h2>Diversity Is Enforced, Not Hoped For.</h2>
+  <p class="section-lead">The default policies exist because one model reviewing its own work is how blind spots ship.</p>
+  <div class="truth-grid"><article class="truth-card reveal"><h3>No Repeats In Sequence.</h3><p>No model may hold two consecutive roles — every voice in the chain sees with different training data.</p></article><article class="truth-card reveal" style="--d:0.1s"><h3>Always Be Testing.</h3><p>New models prove themselves in real work alongside the team — never synthetic benchmarks. The team's convergence verdict keeps them or cuts them.</p></article><article class="truth-card reveal" style="--d:0.2s"><h3>Bans With Teeth.</h3><p>Name a banned model in a dispatch and the dispatch gets rejected — not silently substituted with something else.</p></article></div>
+</section>
+
+<section class="section-light">
+  <p class="eyebrow">Get started</p>
+  <h2>Fill In Your Models. Run The Validator.</h2>
+  <p class="section-lead">Ships in the mod pack as a ready template with commented examples.</p>
+  
+  <div class="terminal reveal">
+    <div class="term-bar">
+      <span class="term-dot td-gold"></span><span class="term-dot"></span><span class="term-dot"></span>
+      <span class="term-title">your machine — three commands</span>
+    </div>
+    <div class="term-body"><p><span class="prompt">$</span> git clone https://github.com/MyAiFreedomSystems/incredagents.git</p><p><span class="prompt">$</span> cd incredagents</p><p><span class="prompt">$</span> python3 onboard.py</p></div>
+    <p class="term-foot">One installer wires in the whole mod pack and asks only for the keys each skill needs.</p>
+  </div>
+</section>
+<div class="cta-band">
+  <h2>Stop letting one model grade its own homework.</h2>
+  <p>Copy the template, fill the blanks, validate — the matrix does the rest.</p>
+  <a class="btn" href="https://github.com/MyAiFreedomSystems/incredagents/tree/main/routing-matrix">Get Routing-Matrix On GitHub →</a>
+</div>
+
+<footer>
+  <img class="foot-brand-logo" src="../assets/incredagents-logo.png" alt="IncredAgents logo">
+  <span class="foot-brand">IncredAgents</span>
+  <p>Built by <a href="https://github.com/MyAiFreedomSystems">My AI Freedom Systems</a></p>
+  <p class="foot-eco"><a href="https://freedomaios.com"><img class="foot-logo foot-logo-v2" src="../assets/freedomaios-logo.png" alt="FreedomAIOS logo — Take the road less traveled">Part of the FreedomAIOS ecosystem</a></p>
+  <p style="margin-top:8px;">Every skill is scrubbed of personal data before it ships. Every word attributed to a person is their real words, from a real source.</p>
+  <p class="site-version">Site v18</p>
+</footer>
+
+<script>
+const io = new IntersectionObserver((entries) => {
+  entries.forEach((e) => {
+    if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
+  });
+}, { threshold: 0.15 });
+document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
+</script>
+
+</body>
+</html>

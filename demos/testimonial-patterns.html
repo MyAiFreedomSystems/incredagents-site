@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Testimonial Display — Pattern Examples (Demo)</title>
+<style>
+  :root {
+    --ink: #1f2430;
+    --muted: #5b6270;
+    --card-bg: #f7f7f9;
+    --line: #e2e4ea;
+    --accent: #3b5bdb;
+    --placeholder: #c9ccd4;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    color: var(--ink);
+    line-height: 1.55;
+    background: #fff;
+  }
+  .page { max-width: 960px; margin: 0 auto; padding: 32px 20px 64px; }
+  .demo-banner {
+    background: #fff8e1;
+    border: 1px solid #f0df9a;
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 14px;
+    margin-bottom: 32px;
+  }
+  h1 { font-size: 26px; margin: 0 0 8px; }
+  h2 {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+    border-top: 1px solid var(--line);
+    padding-top: 28px;
+    margin: 48px 0 16px;
+  }
+  .photo {
+    background: var(--placeholder);
+    border-radius: 8px;
+    flex-shrink: 0;
+    aspect-ratio: 1 / 1;
+  }
+  .photo.round { border-radius: 50%; }
+  .photo::after {
+    content: "PHOTO";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    font-size: 9px;
+    letter-spacing: 0.1em;
+    color: #fff;
+  }
+  blockquote { margin: 0; }
+  .who { font-size: 14px; color: var(--muted); }
+  .who strong { color: var(--ink); display: block; font-size: 15px; }
+  .stars { color: #e8a33d; letter-spacing: 2px; }
+
+  /* ---- Pattern 1: interleaved single ---- */
+  .t-single {
+    display: flex;
+    gap: 18px;
+    align-items: flex-start;
+    background: var(--card-bg);
+    border-left: 4px solid var(--accent);
+    border-radius: 8px;
+    padding: 20px 22px;
+    margin: 24px 0;
+  }
+  .t-single .photo { width: 64px; }
+  .t-single blockquote { font-size: 18px; }
+
+  /* ---- Pattern 2: compact wall grid ---- */
+  .t-wall {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 16px;
+  }
+  .t-card {
+    background: var(--card-bg);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .t-card .head { display: flex; gap: 12px; align-items: center; }
+  .t-card .photo { width: 44px; }
+  .t-card blockquote { font-size: 15px; }
+
+  /* ---- Pattern 3: accessible slider with no-JS fallback ----
+     Without JS: slides render stacked and fully visible.
+     With JS: .js-slider is added and it becomes a one-at-a-time slider. */
+  .t-slider { position: relative; }
+  .t-slides { list-style: none; margin: 0; padding: 0; }
+  .t-slide {
+    background: var(--card-bg);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 22px;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    margin-bottom: 12px;
+  }
+  .t-slide .photo { width: 56px; }
+  .t-slider.js-slider .t-slide { display: none; margin-bottom: 0; }
+  .t-slider.js-slider .t-slide.active { display: flex; }
+  .t-controls { display: none; gap: 8px; align-items: center; margin-top: 12px; }
+  .t-slider.js-slider .t-controls { display: flex; }
+  .t-controls button {
+    min-width: 44px;
+    min-height: 44px;
+    border: 1px solid var(--line);
+    background: #fff;
+    border-radius: 8px;
+    font-size: 15px;
+    cursor: pointer;
+    padding: 0 14px;
+  }
+  .t-controls button:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 2px;
+  }
+  .t-status { font-size: 14px; color: var(--muted); margin-left: auto; }
+
+  @media (max-width: 600px) {
+    .t-single, .t-slide { flex-direction: column; }
+    .t-wall { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="demo-banner">
+    <strong>Demo file.</strong> All quotes below are fictional example filler
+    for layout demonstration only — never ship placeholder quotes to a live
+    page. Gray boxes stand in for real customer photos.
+  </div>
+
+  <h1>Testimonial display patterns — Northbeam Studio (fictional example)</h1>
+
+  <!-- ============ PATTERN 1: interleaved single ============ -->
+  <h2>Pattern 1 · Interleaved single (supports the section above it)</h2>
+
+  <p>
+    <em>[Example sales copy]</em> Setup shouldn't eat your week. Northbeam
+    Studio's onboarding is a single guided session — most teams are live
+    before lunch.
+  </p>
+
+  <figure class="t-single">
+    <div class="photo" role="img" aria-label="Customer photo placeholder"></div>
+    <div>
+      <blockquote>
+        &ldquo;I expected a two-week implementation. We were sending reports
+        the same afternoon &mdash; I kept waiting for the catch and there
+        wasn't one.&rdquo;
+      </blockquote>
+      <figcaption class="who">
+        <strong>Marisol Vega</strong>
+        Owner, Rivera Plumbing &middot; <a href="#">source: video interview</a>
+        <br><span style="font-size:12px">[fictional example quote]</span>
+      </figcaption>
+    </div>
+  </figure>
+
+  <p>
+    <em>[Example sales copy continues]</em> Note how the quote sits directly
+    under the ease-of-setup claim — that relevance match is the whole point
+    of this pattern.
+  </p>
+
+  <!-- ============ PATTERN 2: compact wall grid ============ -->
+  <h2>Pattern 2 · Compact wall-of-love grid (volume = trust)</h2>
+
+  <ul class="t-wall">
+    <li class="t-card">
+      <div class="head">
+        <div class="photo round" role="img" aria-label="Customer photo placeholder"></div>
+        <div class="who"><strong>Dan Okafor</strong>Reefline Coffee Roasters</div>
+      </div>
+      <span class="stars" aria-hidden="true">★★★★★</span>
+      <blockquote>&ldquo;Bookings from our site doubled in the first month.&rdquo;</blockquote>
+      <span class="who" style="font-size:12px">[fictional example quote]</span>
+    </li>
+    <li class="t-card">
+      <div class="head">
+        <div class="photo round" role="img" aria-label="Customer photo placeholder"></div>
+        <div class="who"><strong>Priya Raman</strong>Atlas Tutoring</div>
+      </div>
+      <span class="stars" aria-hidden="true">★★★★★</span>
+      <blockquote>&ldquo;Parents mention the testimonials page on every intro call now.&rdquo;</blockquote>
+      <span class="who" style="font-size:12px">[fictional example quote]</span>
+    </li>
+    <li class="t-card">
+      <div class="head">
+        <div class="photo round" role="img" aria-label="Customer photo placeholder"></div>
+        <div class="who"><strong>Theo Lindqvist</strong>Harbor &amp; Pine Furniture</div>
+      </div>
+      <span class="stars" aria-hidden="true">★★★★☆</span>
+      <blockquote>&ldquo;Worth it for the quote walls alone — setup took one afternoon.&rdquo;</blockquote>
+      <span class="who" style="font-size:12px">[fictional example quote]</span>
+    </li>
+    <li class="t-card">
+      <div class="head">
+        <div class="photo round" role="img" aria-label="Customer photo placeholder"></div>
+        <div class="who"><strong>Grace Adeyemi</strong>Willow Creek Dental</div>
+      </div>
+      <span class="stars" aria-hidden="true">★★★★★</span>
+      <blockquote>&ldquo;Patients trust us before they walk in. That used to take years.&rdquo;</blockquote>
+      <span class="who" style="font-size:12px">[fictional example quote]</span>
+    </li>
+    <li class="t-card">
+      <div class="head">
+        <div class="photo round" role="img" aria-label="Customer photo placeholder"></div>
+        <div class="who"><strong>Sam Whitfield</strong>Nine Iron Golf Academy</div>
+      </div>
+      <span class="stars" aria-hidden="true">★★★★★</span>
+      <blockquote>&ldquo;The grid loaded fast on mobile and just worked. No plugin bloat.&rdquo;</blockquote>
+      <span class="who" style="font-size:12px">[fictional example quote]</span>
+    </li>
+    <li class="t-card">
+      <div class="head">
+        <div class="photo round" role="img" aria-label="Customer photo placeholder"></div>
+        <div class="who"><strong>Lena Moreau</strong>Brightpath Coaching</div>
+      </div>
+      <span class="stars" aria-hidden="true">★★★★★</span>
+      <blockquote>&ldquo;My close rate on discovery calls went from shaky to boring-in-a-good-way.&rdquo;</blockquote>
+      <span class="who" style="font-size:12px">[fictional example quote]</span>
+    </li>
+  </ul>
+
+  <p class="who">
+    Rated 4.9 out of 5 from 37 client reviews
+    <span class="stars" aria-hidden="true">★★★★★</span>
+    — <a href="#">read them all</a> <span style="font-size:12px">[fictional example rating]</span>
+  </p>
+
+  <!-- ============ PATTERN 3: accessible slider, no-JS fallback ============ -->
+  <h2>Pattern 3 · Manual slider (keyboard-safe, no-JS fallback shows all)</h2>
+
+  <section class="t-slider" aria-label="Customer testimonials slider">
+    <ul class="t-slides">
+      <li class="t-slide">
+        <div class="photo" role="img" aria-label="Customer photo placeholder"></div>
+        <div>
+          <blockquote>&ldquo;I was skeptical anything under five figures could move the needle. The first campaign paid for the year.&rdquo;</blockquote>
+          <p class="who"><strong>Rosa Delgado</strong> — Mesa Verde Landscaping <span style="font-size:12px">[fictional example quote]</span></p>
+        </div>
+      </li>
+      <li class="t-slide">
+        <div class="photo" role="img" aria-label="Customer photo placeholder"></div>
+        <div>
+          <blockquote>&ldquo;Support answered in minutes, on a Sunday. That's when I decided to stay for good.&rdquo;</blockquote>
+          <p class="who"><strong>Henrik Bauer</strong> — Klarheit Studio <span style="font-size:12px">[fictional example quote]</span></p>
+        </div>
+      </li>
+      <li class="t-slide">
+        <div class="photo" role="img" aria-label="Customer photo placeholder"></div>
+        <div>
+          <blockquote>&ldquo;We're a two-person shop and it made us look like a twenty-person shop — in a good way.&rdquo;</blockquote>
+          <p class="who"><strong>Aiko Tanabe</strong> — Paper Crane Bakery <span style="font-size:12px">[fictional example quote]</span></p>
+        </div>
+      </li>
+    </ul>
+    <div class="t-controls">
+      <button type="button" class="t-prev">&larr; Previous testimonial</button>
+      <button type="button" class="t-next">Next testimonial &rarr;</button>
+      <span class="t-status" aria-live="polite"></span>
+    </div>
+  </section>
+
+  <p class="who" style="margin-top:24px">
+    Slider behavior: no auto-advance (so no pause trap and nothing to fail
+    WCAG 2.2.2), real buttons with visible focus, slide position announced as
+    text, and — with JavaScript disabled — every slide simply renders stacked.
+  </p>
+
+</div>
+
+<script>
+(function () {
+  var slider = document.querySelector('.t-slider');
+  if (!slider) return;
+  var slides = Array.prototype.slice.call(slider.querySelectorAll('.t-slide'));
+  var status = slider.querySelector('.t-status');
+  var i = 0;
+
+  // Only now convert to one-at-a-time mode: no-JS users keep the stacked view.
+  slider.classList.add('js-slider');
+
+  function show(n) {
+    slides[i].classList.remove('active');
+    i = (n + slides.length) % slides.length;
+    slides[i].classList.add('active');
+    status.textContent = (i + 1) + ' of ' + slides.length;
+  }
+  slides[0].classList.add('active');
+  status.textContent = '1 of ' + slides.length;
+
+  slider.querySelector('.t-prev').addEventListener('click', function () { show(i - 1); });
+  slider.querySelector('.t-next').addEventListener('click', function () { show(i + 1); });
+})();
+</script>
+</body>
+</html>

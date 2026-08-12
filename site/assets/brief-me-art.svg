@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="34%" r="80%">
+      <stop offset="0%" stop-color="#24507c"/>
+      <stop offset="55%" stop-color="#1b3a5c"/>
+      <stop offset="100%" stop-color="#122a45"/>
+    </radialGradient>
+    <pattern id="dots" width="34" height="34" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.6" fill="#d9a441" opacity="0.14"/>
+    </pattern>
+    <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="18" stdDeviation="26" flood-color="#0a1c30" flood-opacity="0.55"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="800" fill="url(#bg)"/>
+  <rect width="1200" height="800" fill="url(#dots)"/>
+
+  <!-- orbit accent -->
+  <circle cx="600" cy="400" r="330" fill="none" stroke="#d9a441" stroke-width="1.6" stroke-dasharray="3 9" opacity="0.5"/>
+  <circle cx="600" cy="400" r="382" fill="none" stroke="#d9a441" stroke-width="1.2" opacity="0.22"/>
+
+  <!-- the brief window -->
+  <g filter="url(#soft)">
+    <rect x="180" y="120" width="840" height="520" rx="22" fill="#fafaf8"/>
+    <rect x="180" y="120" width="840" height="52" rx="22" fill="#122a45"/>
+    <rect x="180" y="150" width="840" height="22" fill="#122a45"/>
+    <circle cx="214" cy="146" r="7" fill="#d9a441"/>
+    <circle cx="238" cy="146" r="7" fill="#fafaf8" opacity="0.5"/>
+    <circle cx="262" cy="146" r="7" fill="#fafaf8" opacity="0.3"/>
+    <text x="986" y="153" text-anchor="end" font-family="Menlo, monospace" font-size="19" fill="#d9a441">/brief-me</text>
+
+    <!-- section label -->
+    <text x="216" y="212" font-family="Georgia, serif" font-style="italic" font-size="24" fill="#1b3a5c">Your decision, every option on the table:</text>
+
+    <!-- card 1: terracotta -->
+    <g>
+      <rect x="216" y="234" width="240" height="330" rx="16" fill="#c9825d"/>
+      <rect x="216" y="234" width="240" height="330" rx="16" fill="none" stroke="#a96644" stroke-width="2"/>
+      <text x="240" y="276" font-family="Helvetica, Arial, sans-serif" font-weight="800" font-size="21" fill="#fafaf8">Which offer</text>
+      <text x="240" y="300" font-family="Helvetica, Arial, sans-serif" font-weight="800" font-size="21" fill="#fafaf8">ships first?</text>
+      <circle cx="248" cy="338" r="9" fill="none" stroke="#fafaf8" stroke-width="3"/>
+      <rect x="266" y="331" width="130" height="13" rx="6.5" fill="#fafaf8" opacity="0.85"/>
+      <circle cx="248" cy="374" r="9" fill="none" stroke="#fafaf8" stroke-width="3"/>
+      <circle cx="248" cy="374" r="4.5" fill="#122a45"/>
+      <rect x="266" y="367" width="104" height="13" rx="6.5" fill="#fafaf8" opacity="0.85"/>
+      <circle cx="248" cy="410" r="9" fill="none" stroke="#fafaf8" stroke-width="3"/>
+      <rect x="266" y="403" width="146" height="13" rx="6.5" fill="#fafaf8" opacity="0.55"/>
+      <rect x="240" y="500" width="112" height="30" rx="15" fill="#122a45"/>
+      <text x="296" y="520" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-weight="700" font-size="15" fill="#d9a441">Advisor</text>
+    </g>
+
+    <!-- card 2: sage -->
+    <g>
+      <rect x="480" y="234" width="240" height="330" rx="16" fill="#8ba888"/>
+      <rect x="480" y="234" width="240" height="330" rx="16" fill="none" stroke="#6d8a6a" stroke-width="2"/>
+      <text x="504" y="276" font-family="Helvetica, Arial, sans-serif" font-weight="800" font-size="21" fill="#fafaf8">What could</text>
+      <text x="504" y="300" font-family="Helvetica, Arial, sans-serif" font-weight="800" font-size="21" fill="#fafaf8">break it?</text>
+      <circle cx="512" cy="338" r="9" fill="none" stroke="#fafaf8" stroke-width="3"/>
+      <rect x="530" y="331" width="122" height="13" rx="6.5" fill="#fafaf8" opacity="0.85"/>
+      <circle cx="512" cy="374" r="9" fill="none" stroke="#fafaf8" stroke-width="3"/>
+      <rect x="530" y="367" width="140" height="13" rx="6.5" fill="#fafaf8" opacity="0.55"/>
+      <rect x="504" y="452" width="192" height="78" rx="12" fill="#fafaf8" opacity="0.92"/>
+      <text x="522" y="482" font-family="Helvetica, Arial, sans-serif" font-weight="800" font-size="15" fill="#1b3a5c">Team verdict</text>
+      <rect x="522" y="494" width="120" height="11" rx="5.5" fill="#8ba888"/>
+      <rect x="522" y="511" width="88" height="11" rx="5.5" fill="#8ba888" opacity="0.6"/>
+      <rect x="504" y="500" width="0" height="0"/>
+      <rect x="588" y="534" width="0" height="0"/>
+      <rect x="504" y="500" width="112" height="30" rx="15" fill="#122a45" transform="translate(0,34)"/>
+      <text x="560" y="554" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-weight="700" font-size="15" fill="#d9a441">Linter</text>
+    </g>
+
+    <!-- card 3: slate blue -->
+    <g>
+      <rect x="744" y="234" width="240" height="330" rx="16" fill="#7f96b8"/>
+      <rect x="744" y="234" width="240" height="330" rx="16" fill="none" stroke="#61789a" stroke-width="2"/>
+      <text x="768" y="276" font-family="Helvetica, Arial, sans-serif" font-weight="800" font-size="21" fill="#fafaf8">How do we</text>
+      <text x="768" y="300" font-family="Helvetica, Arial, sans-serif" font-weight="800" font-size="21" fill="#fafaf8">build it?</text>
+      <circle cx="776" cy="338" r="9" fill="none" stroke="#fafaf8" stroke-width="3"/>
+      <rect x="794" y="331" width="136" height="13" rx="6.5" fill="#fafaf8" opacity="0.85"/>
+      <circle cx="776" cy="374" r="9" fill="none" stroke="#fafaf8" stroke-width="3"/>
+      <rect x="794" y="367" width="112" height="13" rx="6.5" fill="#fafaf8" opacity="0.55"/>
+      <circle cx="776" cy="410" r="9" fill="none" stroke="#fafaf8" stroke-width="3"/>
+      <rect x="794" y="403" width="128" height="13" rx="6.5" fill="#fafaf8" opacity="0.4"/>
+      <rect x="768" y="500" width="112" height="30" rx="15" fill="#122a45"/>
+      <text x="824" y="520" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-weight="700" font-size="15" fill="#d9a441">Builder</text>
+    </g>
+  </g>
+
+  <!-- gold check badge -->
+  <g filter="url(#soft)">
+    <circle cx="1020" cy="186" r="46" fill="#d9a441"/>
+    <path d="M998 186l15 15 29-30" fill="none" stroke="#122a45" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- floating chips -->
+  <g filter="url(#soft)">
+    <rect x="120" y="576" width="252" height="62" rx="31" fill="#122a45" stroke="#d9a441" stroke-width="2.5"/>
+    <text x="246" y="615" text-anchor="middle" font-family="Menlo, monospace" font-size="21" font-weight="700" fill="#fafaf8">no flags, no args</text>
+  </g>
+  <g filter="url(#soft)">
+    <rect x="836" y="576" width="260" height="62" rx="31" fill="#122a45" stroke="#d9a441" stroke-width="2.5"/>
+    <text x="966" y="615" text-anchor="middle" font-family="Menlo, monospace" font-size="21" font-weight="700" fill="#fafaf8">you decide, always</text>
+  </g>
+</svg>

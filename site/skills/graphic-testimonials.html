@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Graphic-Testimonials · IncredAgents Skills</title>
+<meta name="description" content="Turn harvested testimonials into branded card images — Canva or standalone HTML template, recolored to your brand, with circular client photos.">
+<link rel="icon" type="image/png" href="../assets/incredagents-logo.png">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+<nav>
+  <a class="nav-brand" href="../index.html"><img class="brand-logo" src="../assets/incredagents-logo.png" alt="IncredAgents logo">IncredAgents</a>
+  <div class="nav-links">
+    <a href="../index.html#skills">All Skills</a>
+    <a class="nav-cta" href="https://github.com/MyAiFreedomSystems/graphic-testimonials">GitHub</a>
+  </div>
+</nav>
+
+<header class="skill-hero">
+  <img class="skill-badge reveal" src="../assets/skill-graphic.svg" alt="Graphic-Testimonials logo">
+  <p class="eyebrow eyebrow-gold reveal">Standalone Skill</p>
+  <h1 class="skill-title"><span class="w" style="--i:0">Their</span> <span class="w" style="--i:1">words.</span> <span class="w" style="--i:2">Your</span> <span class="w" style="--i:3">brand.</span> <span class="w script-accent" style="--i:4">Minutes.</span></h1>
+  <p class="skill-sub reveal" style="--d:.4s">Feed it a quote, a name, a role, and a photo. Get back a branded 1080×1080 card — recolored to your exact palette, circular portrait, ready to post — wired into your page. Canva if you have it. Its own template if you don't.</p>
+  <figure class="skill-art reveal" style="--d:.25s">
+    <img src="../assets/card-example.png" alt="A branded testimonial card produced by this skill from an example post — condensed words, script name, navy and gold brand">
+    <figcaption>Example output — this persona is invented to show the format.</figcaption>
+  </figure>
+  <div class="hero-actions reveal" style="--d:.5s">
+    <a class="btn btn-pulse" href="https://github.com/MyAiFreedomSystems/graphic-testimonials">Get It On GitHub →</a>
+    <a class="btn ghost" href="../index.html#skills">Back To All Skills</a>
+  </div>
+</header>
+
+<section class="section-light">
+  <p class="eyebrow">Two ways in</p>
+  <h2>Canva If You Have It. Its Own Template If You Don't.</h2>
+  <p class="section-lead">No Canva account? Nothing stops. The bundled HTML template renders the same card through headless Chrome — stars, quote, script name, circular photo — driven by your brand config.</p>
+  <div class="truth-grid"><article class="truth-card reveal"><h3>Your Canva Template, Respected.</h3><p>It duplicates your template and edits the copy — it never touches your original. Transactions, not guesswork: element IDs come from the API response, and unusable cards get renamed, never deleted.</p></article><article class="truth-card reveal" style="--d:0.1s"><h3>Recolored To Your Exact Brand.</h3><p>A post-process script corner-samples the background and blends to your hex while preserving the anti-aliasing — no jagged edges, no close-enough blue.</p></article><article class="truth-card reveal" style="--d:0.2s"><h3>Faces Baked In, Circles Done Right.</h3><p>Client photos composited as clean circles with your ring color. Fair warning: re-exporting from Canva loses the face — the skill tells you so, and re-runs the step.</p></article></div>
+</section>
+<section class="section-light">
+  <p class="eyebrow">The hard rules</p>
+  <h2>Real Clients. Versioned Files. No Exceptions.</h2>
+  <p class="section-lead">Every name and quote traces back to a source — this skill sits downstream of a qualification gate, and it acts like it.</p>
+  <div class="truth-grid"><article class="truth-card reveal"><h3>Nothing Ships Unsourced.</h3><p>Real, verifiable clients only. If a name can't be traced, it doesn't become a card.</p></article><article class="truth-card reveal" style="--d:0.1s"><h3>Never Overwrite Your Originals.</h3><p>Files are versioned. Your Canva template is duplicated, never edited. What you had before the skill ran, you still have.</p></article><article class="truth-card reveal" style="--d:0.2s"><h3>Ranked By What You're Selling.</h3><p>Cards get wired into your page with the stories that match the offer first — overflow goes under its own subheading, not deleted.</p></article></div>
+</section>
+
+<section class="section-light">
+  <p class="eyebrow">Get started</p>
+  <h2>From Quote To Card Tonight.</h2>
+  <p class="section-lead">Clone it, hand it harvested material, and get back cards worth posting.</p>
+  
+  <div class="terminal reveal">
+    <div class="term-bar">
+      <span class="term-dot td-gold"></span><span class="term-dot"></span><span class="term-dot"></span>
+      <span class="term-title">your machine — one command</span>
+    </div>
+    <div class="term-body"><p><span class="prompt">$</span> git clone https://github.com/MyAiFreedomSystems/graphic-testimonials.git</p><p><span class="term-comment"># drop the folder in your agent's skills directory. done.</span></p></div>
+    
+  </div>
+</section>
+<div class="cta-band">
+  <h2>Your next card is one command away.</h2>
+  <p>Pair it with Harvest-Testimonials and the whole pipeline runs itself.</p>
+  <a class="btn" href="https://github.com/MyAiFreedomSystems/graphic-testimonials">Get Graphic-Testimonials On GitHub →</a>
+</div>
+
+<footer>
+  <img class="foot-brand-logo" src="../assets/incredagents-logo.png" alt="IncredAgents logo">
+  <span class="foot-brand">IncredAgents</span>
+  <p>Built by <a href="https://github.com/MyAiFreedomSystems">My AI Freedom Systems</a></p>
+  <p class="foot-eco"><a href="https://freedomaios.com"><img class="foot-logo foot-logo-v2" src="../assets/freedomaios-logo.png" alt="FreedomAIOS logo — Take the road less traveled">Part of the FreedomAIOS ecosystem</a></p>
+  <p style="margin-top:8px;">Every skill is scrubbed of personal data before it ships. Every word attributed to a person is their real words, from a real source.</p>
+  <p class="site-version">Site v18</p>
+</footer>
+
+<script>
+const io = new IntersectionObserver((entries) => {
+  entries.forEach((e) => {
+    if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
+  });
+}, { threshold: 0.15 });
+document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
+</script>
+
+</body>
+</html>

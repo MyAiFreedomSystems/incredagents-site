@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hooks-Guide · IncredAgents Skills</title>
+<meta name="description" content="Agent lifecycle hooks across platforms — pre-flight gates, audit logging, compaction survival, with per-platform adapters.">
+<link rel="icon" type="image/png" href="../assets/incredagents-logo.png">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+<nav>
+  <a class="nav-brand" href="../index.html"><img class="brand-logo" src="../assets/incredagents-logo.png" alt="IncredAgents logo">IncredAgents</a>
+  <div class="nav-links">
+    <a href="../index.html#skills">All Skills</a>
+    <a class="nav-cta" href="https://github.com/MyAiFreedomSystems/incredagents/tree/main/hooks-guide">GitHub</a>
+  </div>
+</nav>
+
+<header class="skill-hero">
+  <img class="skill-badge reveal" src="../assets/skill-hooks-guide.svg" alt="Hooks-Guide logo">
+  <p class="eyebrow eyebrow-gold reveal">Inside The IncredAgents Mod Pack</p>
+  <h1 class="skill-title"><span class="w" style="--i:0">Rules</span> <span class="w" style="--i:1">that</span> <span class="w" style="--i:2">fire</span> <span class="w" style="--i:3">inside</span> <span class="w" style="--i:4">the</span> <span class="w" style="--i:5">agent's</span> <span class="w script-accent" style="--i:6">loop.</span></h1>
+  <p class="skill-sub reveal" style="--d:.4s">A hook intercepts your agent at the exact moment it matters — before a tool call, after it, at session start, at compaction — and returns allow, block, or modify. Governance without modifying a single line of the agent's source code.</p>
+  <figure class="skill-art reveal" style="--d:.25s">
+    <img src="../assets/demo-hooks-guide.png" alt="A pre-tool-use hook blocking a protected write, plus a silent audit log and the universal safety rules">
+  </figure>
+  <div class="hero-actions reveal" style="--d:.5s">
+    <a class="btn btn-pulse" href="https://github.com/MyAiFreedomSystems/incredagents/tree/main/hooks-guide">Get It On GitHub →</a>
+    <a class="btn ghost" href="../index.html#skills">Back To All Skills</a>
+  </div>
+</header>
+
+<section class="section-light">
+  <p class="eyebrow">The interception points</p>
+  <h2>Six Moments Where Rules Can Live.</h2>
+  <p class="section-lead">Before any tool call. After it completes. Session start. Session end. Compaction. Error. Each one is a chance to enforce, log, or save state — and this guide maps all six to real use.</p>
+  <div class="truth-grid"><article class="truth-card reveal"><h3>The Gate.</h3><p>Pre-tool-use hooks block writes to protected paths, banned commands, and out-of-scope actions — with a human-readable reason, not a silent failure.</p></article><article class="truth-card reveal" style="--d:0.1s"><h3>The Ledger.</h3><p>Post-tool-use hooks serialize every call — tool, input, exit status, milliseconds — to an audit log. And they never fail, because a logger that breaks the agent is worse than none.</p></article><article class="truth-card reveal" style="--d:0.2s"><h3>The Survivor.</h3><p>Compaction-survival patterns keep hook state alive when context gets compressed — persistent filenames, checkpoint directories, re-injection on the first post-compaction call.</p></article></div>
+</section>
+<section class="section-light">
+  <p class="eyebrow">The safety rules</p>
+  <h2>A Broken Hook Must Never Break The Agent.</h2>
+  <p class="section-lead">Fail-open on exceptions. A kill-switch sentinel file that bypasses everything. Idempotent. Five-second timeout. No network calls in pre-tool-use — it fires hundreds of times a session.</p>
+  <div class="truth-grid"><article class="truth-card reveal"><h3>Per-Platform Truth.</h3><p>Hermes, Claude Code, Codex, Cursor, OpenCode, Continue, Aider, Cline — what each platform actually supports, not what their marketing implies.</p></article><article class="truth-card reveal" style="--d:0.1s"><h3>Workarounds For The Rest.</h3><p>No native hooks? Rule files, wrapper scripts, pre-commit hooks, post-hoc audit — the guide tells you which fallback each platform gets.</p></article><article class="truth-card reveal" style="--d:0.2s"><h3>Battle-Tested Patterns Included.</h3><p>Pre-dispatch validation, post-converge logging, compaction survival — with working code, not pseudocode.</p></article></div>
+</section>
+
+<section class="section-light">
+  <p class="eyebrow">Get started</p>
+  <h2>Put Your Rules Where They Can't Be Ignored.</h2>
+  <p class="section-lead">Ships in the mod pack. Reference it the next time you need a gate, a log, or a checkpoint.</p>
+  
+  <div class="terminal reveal">
+    <div class="term-bar">
+      <span class="term-dot td-gold"></span><span class="term-dot"></span><span class="term-dot"></span>
+      <span class="term-title">your machine — three commands</span>
+    </div>
+    <div class="term-body"><p><span class="prompt">$</span> git clone https://github.com/MyAiFreedomSystems/incredagents.git</p><p><span class="prompt">$</span> cd incredagents</p><p><span class="prompt">$</span> python3 onboard.py</p></div>
+    <p class="term-foot">One installer wires in the whole mod pack and asks only for the keys each skill needs.</p>
+  </div>
+</section>
+<div class="cta-band">
+  <h2>Governance inside the loop beats policy docs.</h2>
+  <p>The next rule you write will actually fire.</p>
+  <a class="btn" href="https://github.com/MyAiFreedomSystems/incredagents/tree/main/hooks-guide">Get Hooks-Guide On GitHub →</a>
+</div>
+
+<footer>
+  <img class="foot-brand-logo" src="../assets/incredagents-logo.png" alt="IncredAgents logo">
+  <span class="foot-brand">IncredAgents</span>
+  <p>Built by <a href="https://github.com/MyAiFreedomSystems">My AI Freedom Systems</a></p>
+  <p class="foot-eco"><a href="https://freedomaios.com"><img class="foot-logo foot-logo-v2" src="../assets/freedomaios-logo.png" alt="FreedomAIOS logo — Take the road less traveled">Part of the FreedomAIOS ecosystem</a></p>
+  <p style="margin-top:8px;">Every skill is scrubbed of personal data before it ships. Every word attributed to a person is their real words, from a real source.</p>
+  <p class="site-version">Site v18</p>
+</footer>
+
+<script>
+const io = new IntersectionObserver((entries) => {
+  entries.forEach((e) => {
+    if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
+  });
+}, { threshold: 0.15 });
+document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
+</script>
+
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Goal · IncredAgents Skills</title>
+<meta name="description" content="Structured goal execution for agents: forced planning, SQLite-persisted state, turn budgets, and an anti-vaporware completion audit.">
+<link rel="icon" type="image/png" href="../assets/incredagents-logo.png">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+<nav>
+  <a class="nav-brand" href="../index.html"><img class="brand-logo" src="../assets/incredagents-logo.png" alt="IncredAgents logo">IncredAgents</a>
+  <div class="nav-links">
+    <a href="../index.html#skills">All Skills</a>
+    <a class="nav-cta" href="https://github.com/MyAiFreedomSystems/incredagents/tree/main/goal">GitHub</a>
+  </div>
+</nav>
+
+<header class="skill-hero">
+  <img class="skill-badge reveal" src="../assets/skill-goal.svg" alt="Goal logo">
+  <p class="eyebrow eyebrow-gold reveal">Inside The IncredAgents Mod Pack</p>
+  <h1 class="skill-title"><span class="w" style="--i:0">Vague</span> <span class="w" style="--i:1">goals</span> <span class="w" style="--i:2">die.</span> <span class="w script-accent" style="--i:3">This</span> <span class="w" style="--i:4">one</span> <span class="w" style="--i:5">has</span> <span class="w" style="--i:6">a</span> <span class="w" style="--i:7">budget.</span></h1>
+  <p class="skill-sub reveal" style="--d:.4s">Type /goal and your objective gets forced through a real plan — definition of done with no vibe words, acceptance criteria you can check, a hard turn budget — before a single action runs. State persists in SQLite. Completion requires an evidence audit.</p>
+  <figure class="skill-art reveal" style="--d:.25s">
+    <img src="../assets/demo-goal.png" alt="A real /goal plan file with definition of done, acceptance criteria checklist, and live status with turn budget">
+  </figure>
+  <div class="hero-actions reveal" style="--d:.5s">
+    <a class="btn btn-pulse" href="https://github.com/MyAiFreedomSystems/incredagents/tree/main/goal">Get It On GitHub →</a>
+    <a class="btn ghost" href="../index.html#skills">Back To All Skills</a>
+  </div>
+</header>
+
+<section class="section-light">
+  <p class="eyebrow">The two-phase law</p>
+  <h2>Planned Before Executed. Every Time.</h2>
+  <p class="section-lead">Skipping the plan is how agents burn 500 turns on an unbounded task with a vibe-word definition of done. This skill makes that impossible.</p>
+  <div class="truth-grid"><article class="truth-card reveal"><h3>No Vibe Words Allowed.</h3><p>'Clean,' 'polished,' 'feels nice' — banned from the definition of done. If a small evaluator can't judge it from the transcript, it doesn't count.</p></article><article class="truth-card reveal" style="--d:0.1s"><h3>Out Of Scope Is Load-Bearing.</h3><p>At least two explicit non-goals, written down. Scope creep dies in the plan file, not in your budget.</p></article><article class="truth-card reveal" style="--d:0.2s"><h3>A Hard Turn Budget.</h3><p>Light tasks: 15–25 turns. Heavy: 60–100. Cap at 100. Hit the budget and it pauses and reports — it never quietly burns on.</p></article></div>
+</section>
+<section class="section-light">
+  <p class="eyebrow">While it runs</p>
+  <h2>State That Survives. Oversight That Doesn't Sleep.</h2>
+  <p class="section-lead">Goal state persists in SQLite across turns and sessions. A heartbeat monitors the agent's vitals every 60 seconds. You get a notification the moment a goal launches.</p>
+  <div class="truth-grid"><article class="truth-card reveal"><h3>Pause, Resume, Clear, Complete.</h3><p>/goal status shows elapsed time, tokens, and what's still unverified. Pause and resume across sessions — it re-reads the plan first.</p></article><article class="truth-card reveal" style="--d:0.1s"><h3>It Stops And Asks.</h3><p>Destructive action? Missing credential? It stops, names exactly what it needs, and waits. No silent improvisation with your stuff.</p></article><article class="truth-card reveal" style="--d:0.2s"><h3>Archive, Never Delete.</h3><p>Files, database rows, records — cleared goals get archived with why, not deleted. Your history stays auditable.</p></article></div>
+</section>
+<section class="section-light">
+  <p class="eyebrow">The anti-vaporware gate</p>
+  <h2>'Done' Requires Evidence.</h2>
+  <p class="section-lead">Before /goal complete, every requirement gets mapped to real, current evidence — files inspected, commands run, results read. Memory is not evidence. Anything missing means work continues, not a victory lap.</p>
+  
+  <div class="terminal reveal">
+    <div class="term-bar">
+      <span class="term-dot td-gold"></span><span class="term-dot"></span><span class="term-dot"></span>
+      <span class="term-title">the completion audit — every step, or it isn't done</span>
+    </div>
+    <div class="term-body"><p><span class="prompt">$</span> restate objective → map every requirement to evidence</p><p><span class="prompt">$</span> inspect real files, command output, test results</p><p><span class="prompt">$</span> python3 goal/scripts/goal.py complete</p><p><span class="term-comment"># only after the audit passes. then the ledger gets the receipt.</span></p></div>
+    
+  </div>
+</section>
+
+<section class="section-light">
+  <p class="eyebrow">Get started</p>
+  <h2>Give Your Agent A Finish Line.</h2>
+  <p class="section-lead">Ships in the mod pack. One installer wires it in.</p>
+  
+  <div class="terminal reveal">
+    <div class="term-bar">
+      <span class="term-dot td-gold"></span><span class="term-dot"></span><span class="term-dot"></span>
+      <span class="term-title">your machine — three commands</span>
+    </div>
+    <div class="term-body"><p><span class="prompt">$</span> git clone https://github.com/MyAiFreedomSystems/incredagents.git</p><p><span class="prompt">$</span> cd incredagents</p><p><span class="prompt">$</span> python3 onboard.py</p></div>
+    <p class="term-foot">One installer wires in the whole mod pack and asks only for the keys each skill needs.</p>
+  </div>
+</section>
+<div class="cta-band">
+  <h2>Stop hoping it finished. Know.</h2>
+  <p>Your next goal comes with a plan, a budget, and receipts.</p>
+  <a class="btn" href="https://github.com/MyAiFreedomSystems/incredagents/tree/main/goal">Get Goal On GitHub →</a>
+</div>
+
+<footer>
+  <img class="foot-brand-logo" src="../assets/incredagents-logo.png" alt="IncredAgents logo">
+  <span class="foot-brand">IncredAgents</span>
+  <p>Built by <a href="https://github.com/MyAiFreedomSystems">My AI Freedom Systems</a></p>
+  <p class="foot-eco"><a href="https://freedomaios.com"><img class="foot-logo foot-logo-v2" src="../assets/freedomaios-logo.png" alt="FreedomAIOS logo — Take the road less traveled">Part of the FreedomAIOS ecosystem</a></p>
+  <p style="margin-top:8px;">Every skill is scrubbed of personal data before it ships. Every word attributed to a person is their real words, from a real source.</p>
+  <p class="site-version">Site v18</p>
+</footer>
+
+<script>
+const io = new IntersectionObserver((entries) => {
+  entries.forEach((e) => {
+    if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
+  });
+}, { threshold: 0.15 });
+document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
+</script>
+
+</body>
+</html>

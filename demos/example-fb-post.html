@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  width: 560px; padding: 30px;
+  background: linear-gradient(160deg, #21456b 0%, #122a45 100%);
+  font-family: Helvetica, Arial, sans-serif;
+}
+.fb-post {
+  background: #ffffff; border-radius: 12px;
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.35);
+}
+.fb-head { display: flex; gap: 12px; align-items: center; padding: 16px 16px 10px; }
+.fb-avatar {
+  width: 46px; height: 46px; border-radius: 50%; flex: none; overflow: hidden;
+}
+.fb-avatar img { width: 100%; height: 100%; object-fit: cover; }
+.fb-name { font-weight: 700; color: #050505; font-size: 1rem; }
+.fb-meta { font-size: 0.78rem; color: #65676b; margin-top: 2px; }
+.fb-text { padding: 4px 16px 14px; margin: 0; color: #050505; font-size: 1rem; line-height: 1.5; }
+.fb-actions {
+  margin: 0 16px; padding: 10px 0 12px; border-top: 1px solid #e4e6eb;
+  display: flex; gap: 26px; color: #65676b; font-size: 0.85rem; font-weight: 600;
+}
+</style>
+</head>
+<body>
+  <div class="fb-post">
+    <div class="fb-head">
+      <div class="fb-avatar"><img src="../site/assets/example-persona-photo.png" alt=""></div>
+      <div>
+        <div class="fb-name">Danielle Ruiz</div>
+        <div class="fb-meta">October 3 at 4:08 PM · 🌎</div>
+      </div>
+    </div>
+    <p class="fb-text">Okay, bragging for a second. We used to lose two custom cake orders a WEEK to DM chaos and a paper calendar. Three months with real systems and we haven't missed a single one. Bookings are up, my weekends are back. If you're on the fence about getting help with your ops — do it. 🙌</p>
+    <div class="fb-actions"><span>👍 Like</span><span>💬 Comment</span><span>↗ Share</span></div>
+  </div>
+</body>
+</html>

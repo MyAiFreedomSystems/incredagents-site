@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Provision-Team · IncredAgents Skills</title>
+<meta name="description" content="Provision a multi-agent team with identity, composition, governance, and orchestration protocol.">
+<link rel="icon" type="image/png" href="../assets/incredagents-logo.png">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+<nav>
+  <a class="nav-brand" href="../index.html"><img class="brand-logo" src="../assets/incredagents-logo.png" alt="IncredAgents logo">IncredAgents</a>
+  <div class="nav-links">
+    <a href="../index.html#skills">All Skills</a>
+    <a class="nav-cta" href="https://github.com/MyAiFreedomSystems/incredagents/tree/main/provision-team">GitHub</a>
+  </div>
+</nav>
+
+<header class="skill-hero">
+  <img class="skill-badge reveal" src="../assets/skill-provision-team.svg" alt="Provision-Team logo">
+  <p class="eyebrow eyebrow-gold reveal">Inside The IncredAgents Mod Pack</p>
+  <h1 class="skill-title"><span class="w" style="--i:0">A</span> <span class="w" style="--i:1">crew</span> <span class="w" style="--i:2">with</span> <span class="w" style="--i:3">rules,</span> <span class="w" style="--i:4">not</span> <span class="w" style="--i:5">a</span> <span class="w" style="--i:6">group</span> <span class="w script-accent" style="--i:7">chat.</span></h1>
+  <p class="skill-sub reveal" style="--d:.4s">Multiple agents become one coordinated team — with a shared identity, a written roster, governance for how work changes hands, and a dispatch contract everyone observes. Registered, verified, archived never deleted.</p>
+  <figure class="skill-art reveal" style="--d:.25s">
+    <img src="../assets/demo-provision-team.png" alt="The three team files plus a roster table showing provisioned agents and their skills">
+  </figure>
+  <div class="hero-actions reveal" style="--d:.5s">
+    <a class="btn btn-pulse" href="https://github.com/MyAiFreedomSystems/incredagents/tree/main/provision-team">Get It On GitHub →</a>
+    <a class="btn ghost" href="../index.html#skills">Back To All Skills</a>
+  </div>
+</header>
+
+<section class="section-light">
+  <p class="eyebrow">The three files</p>
+  <h2>A Team Is Three Documents.</h2>
+  <p class="section-lead">TEAM_IDENTITY.md — name, shared purpose, collective boundaries. TEAM_COMPOSITION.md — who's on the team, their roles, their skills. TEAM_GOVERNANCE.md — handoff rules, approval gates, escalation paths.</p>
+  <div class="truth-grid"><article class="truth-card reveal"><h3>Composition Is Never Guessed.</h3><p>Every member must already be a provisioned agent — the team assembles identities, it doesn't invent them.</p></article><article class="truth-card reveal" style="--d:0.1s"><h3>Orchestration Isn't Reinvented.</h3><p>The default contract — sequential dispatch, convergence voting, orchestrator resolves disagreements — is referenced, not rebuilt per team.</p></article><article class="truth-card reveal" style="--d:0.2s"><h3>Custom Rules Get Written Down.</h3><p>Need something beyond the standard contract? It goes in the governance file as a documented decision — never improvised mid-run.</p></article></div>
+</section>
+<section class="section-light">
+  <p class="eyebrow">The guarantees</p>
+  <h2>Same Discipline As Everything Else We Ship.</h2>
+  <p class="section-lead">Self-verifying. Append-only registry. No duplicated governance. And no chore lists handed back to you.</p>
+  <div class="truth-grid"><article class="truth-card reveal"><h3>It Refuses To Clobber.</h3><p>A folder that already has team files is already a team — it stops instead of overwriting.</p></article><article class="truth-card reveal" style="--d:0.1s"><h3>Every Line Prints OK.</h3><p>Seven files and four directories verified before it reports ready.</p></article><article class="truth-card reveal" style="--d:0.2s"><h3>Archived, Never Deleted.</h3><p>Retired teams stay in the registry as archived. Your organizational memory survives reorganizations.</p></article></div>
+</section>
+
+<section class="section-light">
+  <p class="eyebrow">Get started</p>
+  <h2>Turn Your Agents Into A Team.</h2>
+  <p class="section-lead">Ships in the mod pack. Provision the agents first, then assemble.</p>
+  
+  <div class="terminal reveal">
+    <div class="term-bar">
+      <span class="term-dot td-gold"></span><span class="term-dot"></span><span class="term-dot"></span>
+      <span class="term-title">your machine — three commands</span>
+    </div>
+    <div class="term-body"><p><span class="prompt">$</span> git clone https://github.com/MyAiFreedomSystems/incredagents.git</p><p><span class="prompt">$</span> cd incredagents</p><p><span class="prompt">$</span> python3 onboard.py</p></div>
+    <p class="term-foot">One installer wires in the whole mod pack and asks only for the keys each skill needs.</p>
+  </div>
+</section>
+<div class="cta-band">
+  <h2>Coordination is a document, not a hope.</h2>
+  <p>The next multi-agent job starts with a roster and rules.</p>
+  <a class="btn" href="https://github.com/MyAiFreedomSystems/incredagents/tree/main/provision-team">Get Provision-Team On GitHub →</a>
+</div>
+
+<footer>
+  <img class="foot-brand-logo" src="../assets/incredagents-logo.png" alt="IncredAgents logo">
+  <span class="foot-brand">IncredAgents</span>
+  <p>Built by <a href="https://github.com/MyAiFreedomSystems">My AI Freedom Systems</a></p>
+  <p class="foot-eco"><a href="https://freedomaios.com"><img class="foot-logo foot-logo-v2" src="../assets/freedomaios-logo.png" alt="FreedomAIOS logo — Take the road less traveled">Part of the FreedomAIOS ecosystem</a></p>
+  <p style="margin-top:8px;">Every skill is scrubbed of personal data before it ships. Every word attributed to a person is their real words, from a real source.</p>
+  <p class="site-version">Site v18</p>
+</footer>
+
+<script>
+const io = new IntersectionObserver((entries) => {
+  entries.forEach((e) => {
+    if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
+  });
+}, { threshold: 0.15 });
+document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
+</script>
+
+</body>
+</html>

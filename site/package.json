@@ -1,0 +1,9 @@
+{
+  "name": "skillmanager-public-site",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Landing site for the IncredAgents open skills program",
+  "scripts": {
+    "dev": "node server.js"
+  }
+}
