@@ -1434,3 +1434,10 @@ footer { background: transparent; }
 @media (max-width: 640px) {
   .hero-bee-bot { position: static; transform: none; height: 260px; margin: 0 auto; animation: none; }
 }
+
+/* v23 corrective: the stage stacks at ≤720px — the bot must stack with it.
+   v22 only made the bot static ≤640px, leaving 641–720px with the bot
+   absolutely centered over the sub text and behind the stacked tiles. */
+@media (max-width: 720px) {
+  .hero-bee-bot { position: static; transform: none; height: 260px; margin: 0 auto; animation: none; }
+}

@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- Site v23: the bot stacks when the stage stacks. v22 only un-pinned the bot
+  at ≤640px, but the hero stage switches to its stacked layout at ≤720px —
+  so at 641–720px (the owner's own window width) the bot was still absolutely
+  centered over the sub-headline, with the stacked tiles painting over it.
+  The bot now joins the flow at the same ≤720px breakpoint. Verified at 8
+  widths (390–1654px, including the 720/721 boundary) by an independent QA
+  subagent pass: zero overlaps, zero center drift, no overflow. Snapshot in
+  `versions/v23/`.
 - Site v22: the bee bot stands alone. The robot-window frame is gone from the
   hero — the bee-chest robot now sits bare in the center, dead-centered with
   `translate(-50%,-50%)` and floating on a margin-top animation so centering
