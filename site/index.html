@@ -10,6 +10,8 @@
 </head>
 <body>
 
+<canvas id="hive" aria-hidden="true"></canvas>
+
 <nav>
   <a class="nav-brand" href="index.html"><img class="brand-logo" src="assets/incredagents-logo.png" alt="IncredAgents logo">IncredAgents</a>
   <div class="nav-links">
@@ -32,7 +34,7 @@
     <div class="pulse-ring pr-2"></div>
     <div class="robot-window">
       <div class="rw-bar"><span class="rw-dot"></span><span class="rw-dot"></span><span class="rw-dot"></span></div>
-      <img src="assets/incredagents-logo.png" alt="The IncredAgents team of gold robot agents">
+      <img class="rw-bee-bot" src="assets/robot-single-bee.png" alt="The IncredAgents bee bot — gold robot with the bee emblem on its chest">
     </div>
     <a class="tile ht-1" href="https://github.com/MyAiFreedomSystems/harvest-testimonials" aria-label="Harvest-Testimonials on GitHub">
       <img src="assets/skill-harvest.svg" alt="">
@@ -241,6 +243,7 @@
 </section>
 
 <div class="cta-band">
+  <img class="cta-bots" src="assets/robot-highfive.gif" alt="Two IncredAgents bots high-fiving">
   <h2>Your agent could be doing this tomorrow morning.</h2>
   <p>Skills built on real client work, released when they earn it. Star the repos so you know when the next one drops.</p>
   <a class="btn" href="https://github.com/MyAiFreedomSystems">See All Skills on GitHub →</a>
@@ -252,7 +255,7 @@
   <p>Built by <a href="https://github.com/MyAiFreedomSystems">My AI Freedom Systems</a></p>
   <p class="foot-eco"><a href="https://freedomaios.com"><img class="foot-logo foot-logo-v2" src="assets/freedomaios-logo.png" alt="FreedomAIOS logo — Take the road less traveled">Part of the FreedomAIOS ecosystem</a></p>
   <p style="margin-top:8px;">Every skill is scrubbed of personal data before it ships. Every word attributed to a person is their real words, from a real source.</p>
-  <p class="site-version">Site v18</p>
+  <p class="site-version">Site v21</p>
 </footer>
 
 <aside class="idx-panel" id="idxPanel" aria-label="Skill index">
@@ -282,13 +285,21 @@
 <div class="idx-backdrop" id="idxBackdrop"></div>
 
 <script>
-// Scroll-reveal with stagger via --d custom property
+// Scroll-reveal with stagger via --d custom property.
+// Threshold is low and pre-triggered 220px early; a slow sweep backstops it
+// so fast scrolling never leaves a blank section (v20 fix).
 const io = new IntersectionObserver((entries) => {
   entries.forEach((e) => {
     if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
   });
-}, { threshold: 0.15 });
+}, { threshold: 0.01, rootMargin: "0px 0px 220px 0px" });
 document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
+setInterval(() => {
+  document.querySelectorAll(".reveal:not(.in)").forEach((el) => {
+    const r = el.getBoundingClientRect();
+    if (r.top < innerHeight && r.bottom > 0) el.classList.add("in");
+  });
+}, 700);
 
 // Skill index panel
 const openIdx = () => document.body.classList.add("idx-open");
@@ -297,6 +308,194 @@ document.getElementById("idxToggle").addEventListener("click", openIdx);
 document.getElementById("idxClose").addEventListener("click", closeIdx);
 document.getElementById("idxBackdrop").addEventListener("click", closeIdx);
 document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeIdx(); });
+</script>
+
+<script>
+/* The Hive — one canvas owns the page background. Honeycomb with the glimmer
+   sweep, three bees hopping cell to cell. Section bands (hero / CTA / footer)
+   are painted here so the comb runs uninterrupted behind the whole page. */
+(function () {
+  var cv = document.getElementById("hive");
+  if (!cv) return;
+  var ctx = cv.getContext("2d");
+  var W, H, cells = [], bees = [];
+  var R = 52, BASE = 0.10, GLIM = 0.16, PERIOD = 4500;
+  var GOLD = "217,164,65", NAVY = "18,42,69";
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  var bands = [
+    { el: document.querySelector(".hero"), type: "hero" },
+    { el: document.querySelector(".cta-band"), type: "gold" },
+    { el: document.querySelector("footer"), type: "deep" }
+  ].filter(function (b) { return b.el; });
+
+  function size() {
+    var w = innerWidth, h = innerHeight;
+    var dpr = Math.min(devicePixelRatio || 1, 2);
+    cv.width = Math.round(w * dpr); cv.height = Math.round(h * dpr);
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    W = w; H = h; buildCells();
+  }
+  function buildCells() {
+    var hx = R * Math.sqrt(3), vy = R * 1.5, out = [], row = 0;
+    for (var y = -vy; y < H + vy; y += vy, row++) {
+      var xoff = (row % 2) ? hx / 2 : 0;
+      for (var x = -hx; x < W + hx; x += hx) out.push({ x: x + xoff, y: y });
+    }
+    cells = out;
+    if (!bees.length) {
+      var n = cells.length;
+      bees = [mkBee(Math.floor(n * 0.22)), mkBee(Math.floor(n * 0.52)), mkBee(Math.floor(n * 0.8))];
+    } else {
+      bees.forEach(function (b) {
+        var best = 0, bd = 1e9;
+        for (var j = 0; j < cells.length; j++) {
+          var d = Math.hypot(cells[j].x - b.x, cells[j].y - b.y);
+          if (d < bd) { bd = d; best = j; }
+        }
+        b.ci = best;
+      });
+    }
+  }
+  function mkBee(idx) {
+    var c = cells[idx] || { x: W / 2, y: H / 2 };
+    var b = { x: c.x, y: c.y, fx: c.x, fy: c.y, cx: c.x, cy: c.y, tx: c.x, ty: c.y, ci: idx, prevCi: -1, t0: performance.now(), dur: 1100, pause: 0, angle: 0, trail: [] };
+    hop(performance.now(), b); return b;
+  }
+  function neighbors(i) {
+    var c = cells[i], out = [], lo = R * 1.4, hi = R * 2.0;
+    for (var j = 0; j < cells.length; j++) {
+      if (j === i) continue;
+      var d = Math.hypot(cells[j].x - c.x, cells[j].y - c.y);
+      if (d > lo && d < hi) out.push(j);
+    }
+    return out;
+  }
+  function hop(now, b) {
+    var ns = neighbors(b.ci), next = b.ci;
+    if (ns.length) {
+      var f = ns.filter(function (j) { return j !== b.prevCi; });
+      var pool = f.length ? f : ns;
+      next = pool[Math.floor(Math.random() * pool.length)];
+    }
+    var to = cells[next] || cells[b.ci];
+    b.prevCi = b.ci; b.ci = next;
+    b.fx = b.x; b.fy = b.y; b.tx = to.x; b.ty = to.y;
+    var mx = (b.fx + b.tx) / 2, my = (b.fy + b.ty) / 2, dx = b.tx - b.fx, dy = b.ty - b.fy, len = Math.hypot(dx, dy) || 1;
+    var off = (Math.random() - 0.5) * len * 0.5;
+    b.cx = mx + (-dy / len) * off; b.cy = my + (dx / len) * off;
+    b.t0 = now; b.dur = 900 + Math.random() * 700; b.pause = (Math.random() < 0.22) ? 350 + Math.random() * 500 : 0;
+  }
+  function update(now) {
+    bees.forEach(function (b) {
+      var el = now - b.t0;
+      if (el >= b.dur + b.pause) { hop(now, b); return; }
+      var p = Math.min(1, el / b.dur);
+      var e = p < 0.5 ? 2 * p * p : 1 - Math.pow(-2 * p + 2, 2) / 2, u = 1 - e;
+      b.x = u * u * b.fx + 2 * u * e * b.cx + e * e * b.tx;
+      b.y = u * u * b.fy + 2 * u * e * b.cy + e * e * b.ty;
+      var dxp = 2 * u * (b.cx - b.fx) + 2 * e * (b.tx - b.cx);
+      var dyp = 2 * u * (b.cy - b.fy) + 2 * e * (b.ty - b.cy);
+      b.angle = Math.atan2(dyp, dxp);
+      b.trail.push({ x: b.x, y: b.y }); if (b.trail.length > 16) b.trail.shift();
+    });
+  }
+  function bandAt(y, rects) {
+    for (var i = 0; i < rects.length; i++) {
+      if (y >= rects[i].top && y <= rects[i].bottom) return rects[i].type;
+    }
+    return "cream";
+  }
+  function drawBee(x, y, angle, now, dark) {
+    var col = dark ? GOLD : NAVY;
+    ctx.save(); ctx.translate(x, y); ctx.rotate(angle);
+    ctx.strokeStyle = "rgba(" + col + ",0.6)"; ctx.fillStyle = "rgba(" + col + ",0.6)";
+    ctx.lineWidth = 1.3; ctx.lineJoin = "round"; ctx.lineCap = "round";
+    ctx.shadowColor = "rgba(" + col + ",0.45)"; ctx.shadowBlur = 6;
+    var fl = 0.45 + 0.55 * Math.abs(Math.sin(now * 0.03));
+    ctx.save(); ctx.scale(1, fl);
+    ctx.beginPath(); ctx.ellipse(-1, -7, 4.5, 7, -0.5, 0, 6.2832); ctx.stroke();
+    ctx.beginPath(); ctx.ellipse(-1, 7, 4.5, 7, 0.5, 0, 6.2832); ctx.stroke();
+    ctx.restore();
+    ctx.beginPath(); ctx.ellipse(0, 0, 9, 5.5, 0, 0, 6.2832); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(-1, -4.6); ctx.lineTo(-1, 4.6); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(4, -3.4); ctx.lineTo(4, 3.4); ctx.stroke();
+    ctx.beginPath(); ctx.arc(10, 0, 3.2, 0, 6.2832); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(12, -1.5); ctx.lineTo(15.5, -4); ctx.moveTo(12, 1.5); ctx.lineTo(15.5, 4); ctx.stroke();
+    ctx.beginPath(); ctx.arc(15.7, -4.2, 0.9, 0, 6.2832); ctx.fill();
+    ctx.beginPath(); ctx.arc(15.7, 4.2, 0.9, 0, 6.2832); ctx.fill();
+    ctx.restore();
+  }
+  function draw(now) {
+    /* 1. own the backgrounds */
+    ctx.clearRect(0, 0, W, H);
+    ctx.fillStyle = "#fafaf8"; ctx.fillRect(0, 0, W, H);
+    var rects = [];
+    bands.forEach(function (b) {
+      var r = b.el.getBoundingClientRect();
+      if (r.bottom < 0 || r.top > H || r.height < 2) return;
+      rects.push({ top: r.top, bottom: r.bottom, type: b.type });
+      var g;
+      if (b.type === "hero") {
+        g = ctx.createLinearGradient(0, r.top, 0, r.bottom);
+        g.addColorStop(0, "#21456b"); g.addColorStop(0.45, "#1b3a5c"); g.addColorStop(1, "#122a45");
+        ctx.fillStyle = g;
+      } else if (b.type === "gold") {
+        g = ctx.createLinearGradient(0, r.top, 0, r.bottom);
+        g.addColorStop(0, "#dfae4e"); g.addColorStop(1, "#c89230");
+        ctx.fillStyle = g;
+      } else {
+        ctx.fillStyle = "#122a45";
+      }
+      ctx.fillRect(0, r.top, W, r.height);
+    });
+    /* 2. the comb, tinted per band */
+    var span = W + H, reach = span + 600;
+    var sw = ((now % PERIOD) / PERIOD) * reach;
+    ctx.lineWidth = 1.05; ctx.lineCap = "round"; ctx.setLineDash([1, 1.7]);
+    for (var k = 0; k < cells.length; k++) {
+      var c = cells[k];
+      var proj = c.x + c.y;
+      var gg = Math.max(0, 1 - Math.abs(proj - sw) / 320);
+      var t = bandAt(c.y, rects), col, a;
+      if (t === "hero" || t === "deep") { col = GOLD; a = BASE + GLIM * gg * gg; }
+      else if (t === "gold") { col = NAVY; a = 0.08 + 0.12 * gg * gg; }
+      else { col = GOLD; a = 0.05 + 0.08 * gg * gg; }
+      ctx.strokeStyle = "rgba(" + col + "," + a.toFixed(3) + ")";
+      ctx.beginPath();
+      for (var s = 0; s < 6; s++) {
+        var ang = (-90 + s * 60) * Math.PI / 180;
+        var px = c.x + R * Math.cos(ang), py = c.y + R * Math.sin(ang);
+        if (s === 0) ctx.moveTo(px, py); else ctx.lineTo(px, py);
+      }
+      ctx.closePath(); ctx.stroke();
+    }
+    ctx.setLineDash([]);
+    /* 3. the bees */
+    bees.forEach(function (b) {
+      var dark = bandAt(b.y, rects) !== "cream";
+      var col = dark ? GOLD : NAVY;
+      for (var i = 0; i < b.trail.length; i++) {
+        var tp = b.trail[i], a = (i / b.trail.length) * 0.16;
+        ctx.fillStyle = "rgba(" + col + "," + a.toFixed(3) + ")";
+        ctx.beginPath(); ctx.arc(tp.x, tp.y, 1.3, 0, 6.2832); ctx.fill();
+      }
+      drawBee(b.x, b.y, b.angle, now, dark);
+    });
+  }
+  size();
+  addEventListener("resize", size);
+  if (reduce) {
+    var still = function () { draw(performance.now()); };
+    addEventListener("scroll", still, { passive: true });
+    still();
+  } else {
+    setInterval(function () {
+      if (Math.abs(W - innerWidth) > 2 || Math.abs(H - innerHeight) > 2) size();
+      var now = performance.now(); update(now); draw(now);
+    }, 40);
+  }
+})();
 </script>
 
 </body>

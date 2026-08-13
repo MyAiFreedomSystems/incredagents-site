@@ -7,6 +7,23 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- Site v21: the bee bot takes the hero window. The three-bot logo inside the
+  hero's robot window is replaced by the bee-chest robot per owner vote; the
+  floating side bot from v20 folded into it. Original window centering
+  restored after the taller image exposed a chips/buttons overlap (windowSway
+  animation owns `transform`; image sized to the original footprint).
+  Snapshot in `versions/v21/`.
+- Site v20: the bots come home. The bee-chest robot (`robot-single-bee.png`)
+  floats beside the hero window; the high-five robot gif celebrates above the
+  CTA band. Script accent font retired (Yellowtail → Cormorant Garamond light
+  italic — thinner per owner vote; applies site-wide via `--script`). Scroll
+  reveal hardened: pre-triggers 220px early with a fallback sweep so fast
+  scrolling never leaves a blank section. Snapshot in `versions/v20/`.
+- Site v19: the Hive layer. One fixed canvas now paints the page background —
+  hero/CTA/footer bands, the honeycomb with its glimmer sweep, and three
+  cell-hopping bees run uninterrupted behind every section (section
+  backgrounds went transparent; the canvas owns band colors). Same words, same
+  layout, same palette as v18. Snapshot in `versions/v19/`.
 - GitHub Pages: the catalog is live at
   https://myaifreedomsystems.github.io/incredagents-site/ via a workflow that
   deploys `site/` on every push to main.

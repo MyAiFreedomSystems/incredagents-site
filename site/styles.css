@@ -1,12 +1,14 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,300;1,400&display=swap");
 /* ============================================================
    IncredAgents · Testimonial Harvester Skill — Theme v3
    Amber Warmth gold + Vision 4 airy gradients
    Palette: navy #1B3A5C · deep navy #122A45 · cream #FAFAF8
             amber #D9A441 (buttons, borders, icons, thin rules ONLY)
    Headings: Georgia, italic, 400 · Body: Helvetica, Arial, sans-serif
-   Script: Yellowtail — ONE word only ("everywhere") + signatures
+   Script accent: Cormorant Garamond light italic (v20 — thinner per her vote)
    BANNED per her votes: yellow highlights, glow blobs, gold text
-   on navy backgrounds, script fonts on nav/kickers/headings.
+   on navy backgrounds, script fonts on nav/kickers/headings,
+   heavy script fonts anywhere (Yellowtail retired v20).
    ============================================================ */
 @font-face {
   font-family: "Yellowtail";
@@ -26,7 +28,7 @@
   --muted: #5a7292;
   --serif: Georgia, "Times New Roman", serif;
   --sans: Helvetica, Arial, sans-serif;
-  --script: "Yellowtail", cursive;
+  --script: "Cormorant Garamond", Georgia, serif;
   --radius: 14px;
   --shadow: 0 6px 24px rgba(27, 58, 92, 0.12);
 }
@@ -168,7 +170,8 @@ h2 {
 
 .script-accent {
   font-family: var(--script);
-  font-style: normal;
+  font-style: italic;
+  font-weight: 300;
   color: var(--gold-dark);
   font-size: 1.15em;
 }
@@ -1366,3 +1369,51 @@ body.idx-open .idx-backdrop { opacity: 1; pointer-events: auto; }
   .term-body p { white-space: pre-wrap; overflow-wrap: anywhere; }
   .term-body p + p { margin-top: 6px; }
 }
+
+/* ---------- The Hive (v19) ---------- */
+/* One fixed canvas paints the page background (bands + honeycomb + bees).
+   Sections go transparent and sit above it; the comb runs uninterrupted. */
+#hive { position: fixed; inset: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; }
+header.hero, section, .cta-band, footer { position: relative; z-index: 1; }
+.hero { background: transparent; }
+.section-light { background: transparent; }
+.cta-band { background: transparent; }
+footer { background: transparent; }
+
+/* ---------- The bots (v20) ---------- */
+/* Bee-chest bot hovering beside the hero robot window */
+.bee-bot {
+  position: absolute; top: 0; right: 3%; height: 330px; z-index: 3;
+  filter: drop-shadow(0 14px 24px rgba(0, 0, 0, 0.35));
+  animation: beeBotFloat 7s ease-in-out infinite;
+}
+@keyframes beeBotFloat {
+  0%, 100% { transform: translateY(0) rotate(-1.5deg); }
+  50% { transform: translateY(-14px) rotate(1.5deg); }
+}
+/* High-five bots celebrating above the CTA */
+.cta-bots {
+  width: 132px; margin: 0 auto 20px; border-radius: 18px;
+  box-shadow: 0 10px 28px rgba(18, 42, 69, 0.28);
+}
+@media (max-width: 640px) {
+  .bee-bot { height: 190px; right: 1%; top: 4%; }
+  .cta-bots { width: 108px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .bee-bot { animation: none; }
+}
+
+/* ---------- Bee bot inside the hero window (v21) ---------- */
+.rw-bee-bot { height: 340px; width: auto; margin: 0 auto; }
+@media (max-width: 640px) { .rw-bee-bot { height: 260px; } }
+.hero-stage .robot-window { margin: 0; transform: translate(-50%, -50%); }
+.hero .chips { position: relative; z-index: 4; margin-top: 18px; }
+.hero-stage .robot-window img.rw-bee-bot { height: 340px; width: auto; }
+@media (max-width: 640px) { .hero-stage .robot-window img.rw-bee-bot { height: 240px; } }
+
+/* v21 corrective: restore original window centering — windowSway owns transform */
+.hero-stage .robot-window { margin: -160px 0 0 -150px; }
+@media (max-width: 960px) { .hero-stage .robot-window { margin-left: -125px; } }
+@media (max-width: 640px) { .hero-stage .robot-window { margin: 0 auto; } }
+.hero-stage .robot-window img.rw-bee-bot { height: 300px; }

@@ -10,3 +10,4 @@ releases/*.zip
 # Local version snapshots stay on this machine — git history is the public record.
 # (Also keeps the archived real-person demo assets in versions/v15-assets-attic/ private.)
 versions/
+brand/
