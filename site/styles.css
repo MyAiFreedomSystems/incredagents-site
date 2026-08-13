@@ -1417,3 +1417,20 @@ footer { background: transparent; }
 @media (max-width: 960px) { .hero-stage .robot-window { margin-left: -125px; } }
 @media (max-width: 640px) { .hero-stage .robot-window { margin: 0 auto; } }
 .hero-stage .robot-window img.rw-bee-bot { height: 300px; }
+
+/* ---------- Hero bee bot, no window (v22) ---------- */
+.hero-bee-bot {
+  position: absolute; top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  height: 380px; z-index: 2;
+  filter: drop-shadow(0 16px 28px rgba(0,0,0,.4));
+  animation: heroBeeFloat 7s ease-in-out infinite;
+}
+@keyframes heroBeeFloat {
+  0%, 100% { margin-top: 0; }
+  50% { margin-top: -14px; }
+}
+@media (max-width: 960px) { .hero-bee-bot { height: 320px; } }
+@media (max-width: 640px) {
+  .hero-bee-bot { position: static; transform: none; height: 260px; margin: 0 auto; animation: none; }
+}

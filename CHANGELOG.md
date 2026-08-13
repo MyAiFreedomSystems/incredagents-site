@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- Site v22: the bee bot stands alone. The robot-window frame is gone from the
+  hero — the bee-chest robot now sits bare in the center, dead-centered with
+  `translate(-50%,-50%)` and floating on a margin-top animation so centering
+  can never fight the bob. No overlap with headline, sub, tiles, chips, or
+  CTAs on desktop or 390px mobile; verified by an independent QA subagent
+  pass (all 7 criteria, geometry + screenshots). Snapshot in `versions/v22/`.
 - Site v21: the bee bot takes the hero window. The three-bot logo inside the
   hero's robot window is replaced by the bee-chest robot per owner vote; the
   floating side bot from v20 folded into it. Original window centering
