@@ -7,6 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- Site v24: the transformation strip becomes the signature. New "How a skill
+  works" section after the hero — Source → bee bot → Finished product rows for
+  Harvest-Testimonials, Graphic-Testimonials, and Pre-Flight Check, per the
+  owner's direction after the v2 social cards ("This is how we show what
+  skills do!"). Social meta shipped too: the site had no og/twitter tags at
+  all (opengraph.xyz scan showed title/image missing); added the full tag set
+  plus a branded 1280×640 `assets/og-image.png` share card (headline + bee
+  bot, feet margin verified). QA subagent caught a 721–860px panel-clipping
+  band, a missing caption, and a gates-count mismatch — all fixed and
+  re-verified across 8 widths before publish. Snapshot in `versions/v24/`.
 - Pre-Flight Check v1.0.0 published: the house QA gate is now a public repo
   at [MyAiFreedomSystems/pre-flight-check](https://github.com/MyAiFreedomSystems/pre-flight-check)
   with a GitHub release carrying the `.skill` zip. Updated with every lesson

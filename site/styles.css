@@ -1441,3 +1441,74 @@ footer { background: transparent; }
 @media (max-width: 720px) {
   .hero-bee-bot { position: static; transform: none; height: 260px; margin: 0 auto; animation: none; }
 }
+
+/* ---------- Transformation strips (v24) ---------- */
+/* Source → bee bot → finished product. The signature "how a skill works" row. */
+.xf-section { padding-top: 70px; }
+.xf-row {
+  display: flex; align-items: center; gap: 40px;
+  max-width: 1180px; margin: 44px auto 0;
+}
+.xf-label { flex: 0 0 280px; }
+.xf-label h3 { font-family: var(--serif); font-style: italic; font-size: 1.7rem; color: var(--ink); margin-bottom: 10px; }
+.xf-label p { color: #4d5f75; font-size: 0.98rem; line-height: 1.55; }
+.xf-link { display: inline-block; margin-top: 12px; color: var(--gold-dark); font-weight: bold; font-size: 0.92rem; text-decoration: none; }
+.xf-link:hover { text-decoration: underline; }
+.xf-track { flex: 1; display: flex; align-items: center; justify-content: center; gap: 18px; }
+.xf-panel { position: relative; flex: 0 0 300px; }
+.xf-panel figcaption {
+  position: absolute; top: -24px; left: 50%; transform: translateX(-50%);
+  font-size: 0.72rem; letter-spacing: .14em; text-transform: uppercase; color: var(--muted);
+  white-space: nowrap;
+}
+.xf-after figcaption { color: var(--gold-dark); }
+.xf-before { transform: rotate(-1.5deg); }
+.xf-after { transform: rotate(1deg); }
+.xf-panel img, .xf-record, .xf-plain, .xf-bug, .xf-report {
+  width: 300px; border-radius: 12px; box-shadow: 0 12px 26px rgba(18,42,69,.18);
+  display: block; background: #fff;
+}
+.xf-record, .xf-plain, .xf-bug, .xf-report { padding: 18px 20px; background: var(--cream); }
+.xf-quote { font-family: var(--serif); font-style: italic; font-size: 0.94rem; line-height: 1.45; color: var(--ink); }
+.xf-name { margin-top: 10px; font-weight: bold; font-size: 0.88rem; color: var(--navy); }
+.xf-meta { margin-top: 5px; font-size: 0.74rem; color: var(--muted); }
+.xf-src { margin-top: 4px; font-size: 0.74rem; color: var(--gold-dark); }
+.xf-plain p { font-family: var(--serif); font-size: 0.94rem; line-height: 1.5; color: var(--ink); }
+.xf-plain-sig { margin-top: 10px; font-family: var(--sans) !important; font-size: 0.76rem !important; color: var(--muted) !important; }
+.xf-bug { background: var(--navy); border: 2px dashed #c9504d; }
+.xf-bug-title { font-family: var(--serif); font-style: italic; font-size: 1.05rem; color: var(--cream); }
+.xf-bug-sub { margin-top: 6px; font-size: 0.74rem; line-height: 1.5; color: var(--muted); }
+.xf-bug-flag { margin-top: 12px; font-size: 0.78rem; color: #ff8a86; font-weight: bold; }
+.xf-report-head { font-size: 0.72rem; letter-spacing: .12em; text-transform: uppercase; color: var(--gold-dark); margin-bottom: 6px; }
+.xf-report ul { list-style: none; }
+.xf-report li { font-size: 0.85rem; color: var(--ink); padding: 3px 0; }
+.xf-bot { height: 150px; flex: none; filter: drop-shadow(0 10px 18px rgba(18,42,69,.28)); }
+.xf-arrow { color: var(--gold); font-size: 1.9rem; font-family: var(--serif); flex: none; }
+.xf-note { max-width: 720px; margin: 40px auto 0; text-align: center; color: var(--muted); font-size: 0.85rem; font-style: italic; }
+@media (max-width: 960px) {
+  .xf-row { flex-direction: column; gap: 18px; }
+  .xf-label { flex: none; text-align: center; max-width: 480px; }
+  .xf-track { width: 100%; }
+}
+@media (max-width: 720px) {
+  .xf-track { flex-direction: column; gap: 26px; }
+  .xf-panel { flex: none; width: min(100%, 340px); }
+  .xf-panel img, .xf-record, .xf-plain, .xf-bug, .xf-report { width: 100%; }
+  .xf-before, .xf-after { transform: none; }
+  .xf-arrow { transform: rotate(90deg); font-size: 1.5rem; }
+  .xf-bot { height: 120px; }
+  .xf-panel figcaption { position: static; transform: none; display: block; text-align: center; margin-bottom: 8px; }
+}
+
+/* v24 corrective: the horizontal track needs ~860px — stack it below 880px.
+   (First pass stacked at 720px, leaving 721–860px with panels clipped at the
+   viewport edges. QA catch.) */
+@media (min-width: 721px) and (max-width: 880px) {
+  .xf-track { flex-direction: column; gap: 26px; }
+  .xf-panel { flex: none; width: min(100%, 340px); }
+  .xf-panel img, .xf-record, .xf-plain, .xf-bug, .xf-report { width: 100%; }
+  .xf-before, .xf-after { transform: none; }
+  .xf-arrow { transform: rotate(90deg); font-size: 1.5rem; }
+  .xf-bot { height: 120px; }
+  .xf-panel figcaption { position: static; transform: none; display: block; text-align: center; margin-bottom: 8px; }
+}
