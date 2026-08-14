@@ -11,3 +11,5 @@ releases/*.zip
 # (Also keeps the archived real-person demo assets in versions/v15-assets-attic/ private.)
 versions/
 brand/
+# Raw source captures (real course screenshots, unblurred) must NEVER be committed
+site/asset-src/
