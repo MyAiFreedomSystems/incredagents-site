@@ -7,6 +7,7 @@ One row per candidate skill. Status flow:
 |---|---|---|---|---|---|---|---|
 | harvest-testimonials | skill-fixes/harvest-testimonials | useful + standalone | **published** | MIT | free | [MyAiFreedomSystems/harvest-testimonials](https://github.com/MyAiFreedomSystems/harvest-testimonials) | Live; paired with graphic-testimonials |
 | graphic-testimonials | managed skills | useful + standalone | **published** | MIT | free | [MyAiFreedomSystems/graphic-testimonials](https://github.com/MyAiFreedomSystems/graphic-testimonials) | Live |
+| pre-flight-check | public-skills/pre-flight-check | useful + standalone | **published** | all rights reserved (terms TBD) | TBD | [MyAiFreedomSystems/pre-flight-check](https://github.com/MyAiFreedomSystems/pre-flight-check) | v1.0.0 released 2026-08-13; strengthened with the v21–v23 site corrections (breakpoint sweep, breakpoint pairing, transform-centering, frozen frames, measurable QA criteria). NO LICENSE file per owner — do not claim MIT |
 | zoom-transcript-fetch | skill-fixes/zoom-transcript-fetch | promising | evaluated | TBD per release | TBD | — | Not ready — pulled from the public site until it is |
 | html-mailer-builder | managed skills | **not ours — stock bundle** | removed from site v7 | — | — | — | Mistakenly listed; not a MyAiFreedomSystems skill |
 | repo-audit | managed skills | **not ours — stock bundle** ("Git Forensics Contributors") | removed from site v7 | — | — | — | Mistakenly listed; restore only if the owner says it's theirs |

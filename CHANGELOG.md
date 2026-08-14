@@ -7,6 +7,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- Pre-Flight Check v1.0.0 published: the house QA gate is now a public repo
+  at [MyAiFreedomSystems/pre-flight-check](https://github.com/MyAiFreedomSystems/pre-flight-check)
+  with a GitHub release carrying the `.skill` zip. Updated with every lesson
+  from the v21–v23 site corrections: breakpoint sweep (test B−1/B/B+1 and
+  every mid-gap width, plus the owner's real window width), breakpoint
+  pairing (a child un-pins at the same breakpoint as its stacking container),
+  transform-centering vs. animation conflict, the two-screenshot frozen-frame
+  rule, geometry-based overlap checks, and measurable acceptance criteria for
+  review subagents — new reference `responsive-breakpoint-audit.md`. Scrubbed
+  clean, QA-subagent reviewed (SHIP, 4 nits fixed), no LICENSE file and no
+  license claims per owner direction.
 - Site v23: the bot stacks when the stage stacks. v22 only un-pinned the bot
   at ≤640px, but the hero stage switches to its stacked layout at ≤720px —
   so at 641–720px (the owner's own window width) the bot was still absolutely
