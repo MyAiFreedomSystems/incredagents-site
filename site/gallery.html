@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shipped Skills · IncredAgents | Every released skill, its version, and its history</title>
+<meta name="description" content="Every IncredAgents skill that has shipped: what it does, where it lives, current version, and full release history. Kept current.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://myaifreedomsystems.github.io/incredagents-site/gallery.html">
+<meta property="og:title" content="Shipped Skills · IncredAgents | Every released skill, its version, and its history">
+<meta property="og:description" content="Every IncredAgents skill that has shipped: what it does, where it lives, current version, and full release history. Kept current.">
+<meta property="og:image" content="https://myaifreedomsystems.github.io/incredagents-site/assets/og-image.png">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="640">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Shipped Skills · IncredAgents">
+<meta name="twitter:description" content="Every released skill, its version, and its history. Kept current.">
+<meta name="twitter:image" content="https://myaifreedomsystems.github.io/incredagents-site/assets/og-image.png">
+<style>
+  :root {
+    --navy: #1B3A5C;
+    --navy-deep: #12283F;
+    --cream: #FAFAF8;
+    --cream-dim: #F1EEE7;
+    --gold: #D9A441;
+    --ink: #2B2B28;
+    --ink-soft: #5A5A54;
+    --line: #E3DED2;
+  }
+  @font-face {
+    font-family: 'Yellowtail';
+    src: url('assets/Yellowtail-Regular.ttf') format('truetype');
+    font-display: swap;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--cream); color: var(--ink); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; }
+
+  header.gallery-hero {
+    background: var(--navy);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='100' viewBox='0 0 56 100'%3E%3Cpath d='M28 66 L0 50 L0 16 L28 0 L56 16 L56 50 Z' fill='none' stroke='%23ffffff' stroke-opacity='0.06' stroke-width='1.5'/%3E%3C/svg%3E");
+    border-bottom: 4px solid var(--gold);
+    padding: 64px 24px 56px;
+  }
+  .hero-inner { max-width: 1120px; margin: 0 auto; }
+  .kicker { color: var(--gold); font-size: 12px; letter-spacing: 3px; font-weight: 700; text-transform: uppercase; }
+  h1 { color: #fff; font-family: Georgia, 'Times New Roman', serif; font-size: clamp(34px, 5vw, 52px); margin-top: 10px; }
+  h1 .script { font-family: 'Yellowtail', cursive; color: var(--gold); font-weight: 400; }
+  .subtitle { color: rgba(255,255,255,0.82); font-size: 17px; margin-top: 12px; max-width: 640px; line-height: 1.55; }
+
+  nav.site-nav {
+    background: var(--navy-deep);
+    padding: 12px 24px;
+  }
+  nav.site-nav .inner { max-width: 1120px; margin: 0 auto; display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+  nav.site-nav a.brand { display: flex; align-items: center; gap: 10px; color: #fff; text-decoration: none; font-weight: 700; font-size: 15px; }
+  nav.site-nav a.brand img { height: 26px; width: auto; }
+  nav.site-nav a.navlink { color: rgba(255,255,255,0.75); text-decoration: none; font-size: 14px; }
+  nav.site-nav a.navlink:hover { color: var(--gold); }
+
+  .filter-bar {
+    max-width: 1120px; margin: 0 auto; padding: 28px 24px 8px;
+    display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+  }
+  .pill {
+    border: 1.5px solid var(--navy); color: var(--navy); background: transparent;
+    border-radius: 999px; padding: 7px 18px; font-size: 14px; font-weight: 600;
+    cursor: pointer; transition: background 0.15s, color 0.15s;
+  }
+  .pill:hover { background: rgba(27,58,92,0.08); }
+  .pill.active { background: var(--navy); color: #fff; }
+  .count { margin-left: auto; color: var(--ink-soft); font-size: 14px; }
+
+  .grid {
+    max-width: 1120px; margin: 0 auto; padding: 20px 24px 80px;
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 24px;
+  }
+  .card {
+    background: #fff; border: 1px solid var(--line); border-radius: 12px;
+    overflow: hidden; display: flex; flex-direction: column;
+    box-shadow: 0 1px 3px rgba(27,58,92,0.06);
+    transition: box-shadow 0.15s, transform 0.15s;
+  }
+  .card:hover { box-shadow: 0 6px 18px rgba(27,58,92,0.12); transform: translateY(-2px); }
+  .preview {
+    background: var(--cream-dim); min-height: 148px;
+    display: flex; align-items: center; justify-content: center;
+    border-bottom: 1px solid var(--line);
+  }
+  .preview img { height: 88px; width: auto; }
+  .card-body { padding: 18px 20px 20px; display: flex; flex-direction: column; flex: 1; }
+  .badges { display: flex; gap: 8px; margin-bottom: 10px; }
+  .badge-version {
+    background: var(--gold); color: var(--navy-deep); font-size: 12px; font-weight: 800;
+    border-radius: 6px; padding: 3px 9px; letter-spacing: 0.5px;
+  }
+  .badge-license {
+    border: 1px solid var(--line); color: var(--ink-soft); font-size: 12px; font-weight: 600;
+    border-radius: 6px; padding: 3px 9px;
+  }
+  .card h2 { font-family: Georgia, serif; font-size: 20px; color: var(--navy); }
+  .card p.desc { color: var(--ink-soft); font-size: 14.5px; line-height: 1.5; margin-top: 6px; flex: 1; }
+  .meta { margin-top: 14px; font-size: 13px; color: var(--ink-soft); display: flex; flex-wrap: wrap; gap: 6px 14px; }
+  .meta a { color: var(--navy); font-weight: 600; text-decoration: none; border-bottom: 1px solid var(--gold); }
+  .meta a:hover { color: var(--gold); }
+  details.history { margin-top: 12px; border-top: 1px dashed var(--line); padding-top: 10px; }
+  details.history summary { cursor: pointer; font-size: 13px; font-weight: 700; color: var(--navy); }
+  details.history ul { margin: 8px 0 2px 18px; font-size: 13px; color: var(--ink-soft); line-height: 1.6; }
+  .hidden { display: none; }
+
+  footer {
+    border-top: 1px solid var(--line); padding: 24px; text-align: center;
+    color: var(--ink-soft); font-size: 13px;
+  }
+  footer a { color: var(--navy); }
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="inner">
+    <a class="brand" href="index.html"><img src="assets/incredagents-logo.png" alt="IncredAgents logo">IncredAgents</a>
+    <a class="navlink" href="index.html#skills">The Skills</a>
+    <a class="navlink" href="index.html#get-it">Get Started</a>
+    <a class="navlink" href="https://github.com/MyAiFreedomSystems">GitHub</a>
+  </div>
+</nav>
+
+<header class="gallery-hero">
+  <div class="hero-inner">
+    <div class="kicker">IncredAgents · Public Skills</div>
+    <h1>Shipped <span class="script">Skills</span></h1>
+    <p class="subtitle">Every skill we have released: what it does, where it lives, and its full version history. This page is updated every time a skill ships or bumps.</p>
+  </div>
+</header>
+
+<div class="filter-bar" id="filterBar">
+  <button class="pill active" data-cat="all">All</button>
+  <button class="pill" data-cat="quality">Quality</button>
+  <button class="pill" data-cat="testimonials">Testimonials</button>
+  <button class="pill" data-cat="platform">Platform</button>
+  <button class="pill" data-cat="provisioning">Provisioning</button>
+  <span class="count" id="countLabel">5 of 5 skills</span>
+</div>
+
+<main class="grid" id="grid">
+
+  <article class="card" data-cat="quality">
+    <div class="preview"><img src="assets/skill-audit.svg" alt="Pre-Flight Check icon"></div>
+    <div class="card-body">
+      <div class="badges"><span class="badge-version">v1.0.0</span><span class="badge-license">MIT</span></div>
+      <h2>Pre-Flight Check</h2>
+      <p class="desc">A quality gate your agent runs before it calls any work done — truth checks, link verification, breakpoint-sweep visual checks with geometry, an honest delivery report.</p>
+      <div class="meta">
+        <a href="https://github.com/MyAiFreedomSystems/pre-flight-check">Repo</a>
+        <a href="https://github.com/MyAiFreedomSystems/pre-flight-check/releases">Releases</a>
+      </div>
+      <details class="history">
+        <summary>Version history</summary>
+        <ul>
+          <li><strong>v1.0.0</strong> — Aug 13, 2026 — first public release.</li>
+        </ul>
+      </details>
+    </div>
+  </article>
+
+  <article class="card" data-cat="testimonials">
+    <div class="preview"><img src="assets/skill-harvest.svg" alt="Harvest Testimonials icon"></div>
+    <div class="card-body">
+      <div class="badges"><span class="badge-version">v1.0.0</span><span class="badge-license">MIT</span></div>
+      <h2>Harvest Testimonials</h2>
+      <p class="desc">Finds the praise you have already earned — real words, real names, source links — across YouTube, blogs, and social communities. Every candidate passes a qualification gate.</p>
+      <div class="meta">
+        <a href="https://github.com/MyAiFreedomSystems/harvest-testimonials">Repo</a>
+        <a href="https://github.com/MyAiFreedomSystems/harvest-testimonials/releases">Releases</a>
+        <a href="skills/harvest-testimonials.html">Skill page</a>
+      </div>
+      <details class="history">
+        <summary>Version history</summary>
+        <ul>
+          <li><strong>v1.0.0</strong> — Aug 14, 2026 — first tagged release.</li>
+        </ul>
+      </details>
+    </div>
+  </article>
+
+  <article class="card" data-cat="testimonials">
+    <div class="preview"><img src="assets/skill-graphic.svg" alt="Graphic Testimonials icon"></div>
+    <div class="card-body">
+      <div class="badges"><span class="badge-version">v1.0.0</span><span class="badge-license">MIT</span></div>
+      <h2>Graphic Testimonials</h2>
+      <p class="desc">Turns real customer praise into branded testimonial cards — through your Canva template or the bundled standalone template, recolored to your brand with circular client photos.</p>
+      <div class="meta">
+        <a href="https://github.com/MyAiFreedomSystems/graphic-testimonials">Repo</a>
+        <a href="https://github.com/MyAiFreedomSystems/graphic-testimonials/releases">Releases</a>
+        <a href="skills/graphic-testimonials.html">Skill page</a>
+      </div>
+      <details class="history">
+        <summary>Version history</summary>
+        <ul>
+          <li><strong>v1.0.0</strong> — Aug 14, 2026 — first tagged release.</li>
+        </ul>
+      </details>
+    </div>
+  </article>
+
+  <article class="card" data-cat="platform">
+    <div class="preview"><img src="assets/skill-hooks-guide.svg" alt="Hooks Guide icon"></div>
+    <div class="card-body">
+      <div class="badges"><span class="badge-version">v1.0.0</span><span class="badge-license">MIT</span></div>
+      <h2>Hooks Guide</h2>
+      <p class="desc">Agent lifecycle hooks from zero to registered — when each one fires, the safety rules, three patterns worth stealing, and per-platform setup for Hermes, Claude Code, Codex, Cursor, and OpenCode.</p>
+      <div class="meta">
+        <a href="https://github.com/MyAiFreedomSystems/hooks-guide">Repo</a>
+        <a href="https://github.com/MyAiFreedomSystems/hooks-guide/releases">Releases</a>
+        <a href="skills/hooks-guide.html">Skill page</a>
+      </div>
+      <details class="history">
+        <summary>Version history</summary>
+        <ul>
+          <li><strong>v1.0.0</strong> — Aug 14, 2026 — first public release.</li>
+        </ul>
+      </details>
+    </div>
+  </article>
+
+  <article class="card" data-cat="provisioning">
+    <div class="preview"><img src="assets/skill-provision-project.svg" alt="Provision Project icon"></div>
+    <div class="card-body">
+      <div class="badges"><span class="badge-version">v1.0.0</span><span class="badge-license">MIT</span></div>
+      <h2>Provision Project</h2>
+      <p class="desc">Turns an empty folder into an agent-ready workspace — governance files, canonical skeleton, session ledger, per-platform instruction files, self-verified before handoff.</p>
+      <div class="meta">
+        <a href="https://github.com/MyAiFreedomSystems/provision-project">Repo</a>
+        <a href="https://github.com/MyAiFreedomSystems/provision-project/releases">Releases</a>
+        <a href="skills/provision-project.html">Skill page</a>
+      </div>
+      <details class="history">
+        <summary>Version history</summary>
+        <ul>
+          <li><strong>v1.0.0</strong> — Aug 14, 2026 — first public release.</li>
+        </ul>
+      </details>
+    </div>
+  </article>
+
+</main>
+
+<footer>
+  <p>Part of the open skills program by <a href="https://github.com/MyAiFreedomSystems">My AI Freedom Systems</a> · <a href="index.html">Back to the catalog</a></p>
+</footer>
+
+<script>
+  const pills = document.querySelectorAll('.pill');
+  const cards = document.querySelectorAll('.card');
+  const countLabel = document.getElementById('countLabel');
+  pills.forEach(pill => {
+    pill.addEventListener('click', () => {
+      pills.forEach(p => p.classList.remove('active'));
+      pill.classList.add('active');
+      const cat = pill.dataset.cat;
+      let shown = 0;
+      cards.forEach(card => {
+        const show = cat === 'all' || card.dataset.cat === cat;
+        card.classList.toggle('hidden', !show);
+        if (show) shown++;
+      });
+      countLabel.textContent = shown + ' of ' + cards.length + ' skills';
+    });
+  });
+</script>
+
+</body>
+</html>

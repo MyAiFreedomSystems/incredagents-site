@@ -7,6 +7,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- Site v27: the Shipped Skills gallery (`site/gallery.html`). Modeled on the
+  owner's FreedomAIOS page-gallery format — kicker + title header, category
+  filter pills with live count, card grid with per-skill icons, version badge,
+  license badge, repo/release/skill-page links, and an expandable version
+  history per card. Lists all five shipped skills at v1.0.0. Linked from the
+  homepage nav ("Shipped"). Snapshot in `versions/v27/`.
+- All five published repos standardized on MIT per owner direction
+  (2026-08-14: "MIT license is fine" — distinct from "not free forever",
+  which is a pricing promise, not a license). Added LICENSE files to
+  graphic-testimonials, pre-flight-check, hooks-guide, provision-project
+  (harvest-testimonials already had one) and updated every README license
+  section. harvest-testimonials and graphic-testimonials got their first
+  tagged v1.0.0 releases with `.skill` zips, so all five repos now have
+  releases with installable artifacts.
 - Hooks Guide v1.0.0 published: [MyAiFreedomSystems/hooks-guide](https://github.com/MyAiFreedomSystems/hooks-guide)
   with a GitHub release carrying the `.skill` zip. Agent lifecycle hooks across
   platforms — concept core, safety rules, three universal patterns

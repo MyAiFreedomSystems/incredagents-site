@@ -71,4 +71,4 @@ their job, and never silently swallow errors).
 
 ## License
 
-All rights reserved for now. License terms are being decided — watch the repo.
+MIT — see [LICENSE](LICENSE).

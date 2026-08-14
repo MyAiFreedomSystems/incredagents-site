@@ -71,4 +71,4 @@ work before telling you the folder is ready.
 
 ## License
 
-All rights reserved for now. License terms are being decided — watch the repo.
+MIT — see [LICENSE](LICENSE).
