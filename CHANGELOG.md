@@ -6,6 +6,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+- Site v30: invisible footer on every skill page. The v19 hive-background
+  override (`footer { background: transparent }`) applied site-wide, but only
+  the homepage renders the `#hive` canvas — so on all 17 skill pages the
+  footer sat transparent over the cream body: cream links vanished, body text
+  was ghost-gray, and the dark-on-transparent logos turned to mud. Shipped
+  through two QA passes because the captures never included the page bottom.
+  Fix is one scoped rule: `body:not(:has(#hive)) footer { background:
+  var(--navy-deep) }`. New permanent QA rule: every page review must capture
+  the footer region, not just content sections. Snapshot in `versions/v30/`.
+
 ### Added
 - Take My Course For Me v1.0.0 published: [MyAiFreedomSystems/takemycourseforme](https://github.com/MyAiFreedomSystems/takemycourseforme)
   with a GitHub release carrying the `.skill` zip (SKILL.md + 7 capture

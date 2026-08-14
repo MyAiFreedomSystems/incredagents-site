@@ -1379,6 +1379,9 @@ header.hero, section, .cta-band, footer { position: relative; z-index: 1; }
 .section-light { background: transparent; }
 .cta-band { background: transparent; }
 footer { background: transparent; }
+/* Skill pages have no #hive canvas: without this their footer inherits the
+   transparent override above and renders cream-on-cream (invisible text). */
+body:not(:has(#hive)) footer { background: var(--navy-deep); }
 
 /* ---------- The bots (v20) ---------- */
 /* Bee-chest bot hovering beside the hero robot window */
