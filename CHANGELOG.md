@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- Site v25: every skill page is now shareable. All 16 pages under
+  `site/skills/` carried no social meta at all — pasting a skill link into
+  LinkedIn, X, or iMessage rendered a bare URL. Each page now ships the full
+  og/twitter tag set (type, url, title, description, image, twitter:card)
+  with per-page title and description drawn from its own `<title>` and
+  meta description, all pointing at the shared 1280×640
+  `assets/og-image.png` share card. Snapshot in `versions/v25/`.
 - Site v24: the transformation strip becomes the signature. New "How a skill
   works" section after the hero — Source → bee bot → Finished product rows for
   Harvest-Testimonials, Graphic-Testimonials, and Pre-Flight Check, per the
