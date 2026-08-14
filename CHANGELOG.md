@@ -7,6 +7,49 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- Hooks Guide v1.0.0 published: [MyAiFreedomSystems/hooks-guide](https://github.com/MyAiFreedomSystems/hooks-guide)
+  with a GitHub release carrying the `.skill` zip. Agent lifecycle hooks across
+  platforms — concept core, safety rules, three universal patterns
+  (pre-dispatch validation, post-converge logging, compaction survival), and
+  per-platform registration for Hermes, Claude Code, Codex, Cursor, and
+  OpenCode. Scrubbed clean; QA subagent caught one owner-infra reference
+  (Hermes kill-switch interface list) — fixed and re-zipped before publish.
+  NO LICENSE file per owner direction. skills.sh indexing requested
+  (vercel-labs/skills#1959).
+- Provision Project v1.0.0 published: [MyAiFreedomSystems/provision-project](https://github.com/MyAiFreedomSystems/provision-project)
+  with a GitHub release carrying the `.skill` zip. Agent-ready workspace
+  scaffolding: governance files, canonical skeleton, session ledger,
+  per-platform instruction files, optional agent auto-provisioning,
+  self-verification. Scrubbed clean; QA subagent caught a README claim that
+  didn't match the skill (`.cursorrules` vs. the real `.cursor/rules/project.md`)
+  — fixed before publish. NO LICENSE file per owner direction. skills.sh
+  indexing requested (vercel-labs/skills#1960).
+- Site v26: the hooks-guide and provision-project pages' GitHub buttons now
+  point at their new standalone repos instead of the incredagents mod-pack
+  tree. Snapshot in `versions/v26/`.
+- Library evaluation pass: all 10 remaining skill-src candidates scrubbed
+  clean by `scrub_personal.py`. Standalone verdicts recorded in
+  `registry/pipeline.md` — `graphics`, `wrapup`, `provision-agent`,
+  `provision-team` near-ready (footer only); `pre-build-sop`, `kaizen`,
+  `goal` blocked on owner-coupled infra references (Swarm Heartbeat,
+  Telegram, Prime Directive) that need rewrites; `routing-matrix` and
+  `moe-build-team` held pending owner-requested content updates.
+- Fixed harvest-testimonials YAML frontmatter: the description contained an
+  unquoted `Sources: ` colon that broke skills.sh parsing ("No valid skills
+  found"). Quoted the scalar in the repo and in `skill-src/`; the skill now
+  lists and installs via `npx skills add MyAiFreedomSystems/harvest-testimonials`.
+- skills.sh indexing requests filed for the three previously published repos
+  (vercel-labs/skills#1956 pre-flight-check, #1957 harvest-testimonials,
+  #1958 graphic-testimonials); all three verified installable via the CLI.
+- Directory submission: PR opened to ComposioHQ/awesome-claude-skills
+  ([#1626](https://github.com/ComposioHQ/awesome-claude-skills/pull/1626))
+  adding Pre-Flight Check in their template format. VoltAgent/awesome-agent-skills
+  and hesreallyhim/awesome-claude-code deferred — both reject brand-new repos
+  (14-day minimum / community-usage requirements); revisit dates recorded in
+  `launch/show-hn-kit.md`.
+- `launch/show-hn-kit.md`: complete Show HN kit for Pre-Flight Check — title,
+  URL, first-comment story (the true 690px incident), timing, two-hour reply
+  playbook, and the not-to-do list.
 - Site v25: every skill page is now shareable. All 16 pages under
   `site/skills/` carried no social meta at all — pasting a skill link into
   LinkedIn, X, or iMessage rendered a bare URL. Each page now ships the full
