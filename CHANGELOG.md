@@ -6,7 +6,23 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+- Site v31: "From A Real Capture Run" examples section on the Take My Course
+  For Me page. Four step-cards in the classroom frame-card idiom (mono meta
+  line, capture, one plain caption) plus a metric strip with the real numbers
+  from the run's own `manifest.json`: 49 lessons mapped, 42 text + 7 video,
+  0 headless browsers. The three screenshots are real Circle classroom
+  captures (pixelated + gaussian blurred at full resolution until no text
+  survives — layout stays legible, paid content does not leak; raw sources
+  stay in gitignored `site/asset-src/`). Step 4 is the output side: an
+  illustrative cliff-notes panel (TLDR box, module bullets, build-handoff
+  line), visibly labeled "Illustrative Output". Idiom borrowed from the
+  WatchTower launchpad classroom lesson pages (screenshots paired with the
+  words from that moment). Snapshot in `versions/v31/`.
+
 ### Fixed
+- Site v31: the v29 hero demo alt text called the blurred captures "Skool
+  classroom" — the run's manifest says Circle.so. Corrected.
 - Site v30: invisible footer on every skill page. The v19 hive-background
   override (`footer { background: transparent }`) applied site-wide, but only
   the homepage renders the `#hive` canvas — so on all 17 skill pages the

@@ -1515,3 +1515,24 @@ body:not(:has(#hive)) footer { background: var(--navy-deep); }
   .xf-bot { height: 120px; }
   .xf-panel figcaption { position: static; transform: none; display: block; text-align: center; margin-bottom: 8px; }
 }
+
+/* ---------- Extraction examples (v31) ---------- */
+/* Classroom idiom: mono meta line, blurred real capture, one plain caption. */
+.ex-metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin: 28px 0 36px; }
+.ex-metric { background: var(--white); border: 1px solid rgba(27, 58, 92, 0.12); border-radius: var(--radius); padding: 16px 12px; text-align: center; box-shadow: var(--shadow); }
+.ex-metric strong { display: block; font-size: 30px; line-height: 1; color: var(--navy-deep); }
+.ex-metric span { display: block; margin-top: 6px; color: var(--muted); font-size: 13px; }
+.ex-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+@media (max-width: 1100px) { .ex-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 640px) { .ex-grid { grid-template-columns: 1fr; } }
+.ex-card { background: var(--white); border: 1px solid rgba(27, 58, 92, 0.12); border-radius: 18px; overflow: hidden; display: flex; flex-direction: column; box-shadow: var(--shadow); }
+.ex-meta { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding: 14px 16px 0; color: var(--gold-dark); font: 800 11px/1.3 ui-monospace, SFMono-Regular, Menlo, monospace; text-transform: uppercase; letter-spacing: 0.08em; }
+.ex-tag { color: var(--slate); font-size: 10px; letter-spacing: 0.06em; text-align: right; }
+.ex-card > img { width: 100%; display: block; margin-top: 12px; }
+.ex-copy { padding: 14px 18px 18px; }
+.ex-copy p { color: var(--ink); font-size: 15px; line-height: 1.55; }
+.ex-notes { margin: 12px; border: 1px dashed rgba(27, 58, 92, 0.25); border-radius: 14px; background: var(--cream); padding: 16px; flex: 1; }
+.ex-notes .tldr { background: var(--navy-deep); color: var(--cream); border-radius: 10px; padding: 12px 14px; font-size: 14px; line-height: 1.5; }
+.ex-notes .tldr b { color: var(--gold); }
+.ex-notes ul { margin: 12px 0 0 18px; font-size: 14px; line-height: 1.6; color: var(--ink); }
+.ex-notes .handoff { margin-top: 12px; font: 800 12px/1.4 ui-monospace, SFMono-Regular, Menlo, monospace; color: var(--slate); }
