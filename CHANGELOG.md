@@ -6,6 +6,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+- Site v32: the v31 four-card blurred grid on Take My Course For Me read as
+  three slabs of fog — the same blurred white rectangle repeated, doing no
+  persuasive work, with the only card that mattered (the output) smallest.
+  Replaced with the transformation flow the owner has asked for since the
+  harvest before/after: Source (one blurred Circle capture) → bee bot →
+  Notes. The notes panel is now REAL content derived from the skill's own
+  public docs (not invented, not a client's paid course) and tagged "Real
+  Output · From Our Own Public Docs". Metric strip fixed ("42 + 7" was
+  nerdy — now "7 Videos Transcribed"). Lead copy lost the defensive legal
+  aside ("it stays theirs"). Terra/sage/slate accents on the notes panel
+  per the owner's palette request. Two unused blurred assets removed.
+  QA subagent: PASS at 1440/690/500 with honest-aesthetic check.
+
 ### Added
 - Site v31: "From A Real Capture Run" examples section on the Take My Course
   For Me page. Four step-cards in the classroom frame-card idiom (mono meta
