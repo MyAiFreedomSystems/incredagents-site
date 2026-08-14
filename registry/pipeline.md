@@ -20,6 +20,7 @@ One row per candidate skill. Status flow:
 | routing-matrix | skill-src/routing-matrix.md | promising | evaluated — held | TBD per release | TBD | — | Owner flagged content needs updating before publish (2026-08-13). Footer-only otherwise |
 | moe-build-team | skill-src/moe-build-team.md | promising | evaluated — held | TBD per release | TBD | — | Owner flagged content needs updating before publish (2026-08-13) |
 | brief-me | — | promising | candidate | TBD per release | TBD | — | Source not in skill-src; site page exists. Locate canonical source before evaluating |
+| takemycourseforme | skill-src/takemycourseforme/ | useful + standalone | **published** | MIT | TBD | [MyAiFreedomSystems/takemycourseforme](https://github.com/MyAiFreedomSystems/takemycourseforme) | v1.0.0 released 2026-08-14 with `.skill` zip (SKILL.md + 7 scripts + ONBOARDING). Scrub clean; QA SHIP both passes. Also installed to Brain nucleus-canon `.agent/skills/` (indexed #475). Personal-use boundary stated in SKILL.md. skills.sh indexing #1963 |
 | zoom-transcript-fetch | skill-fixes/zoom-transcript-fetch | promising | evaluated | TBD per release | TBD | — | Not ready — pulled from the public site until it is |
 | html-mailer-builder | managed skills | **not ours — stock bundle** | removed from site v7 | — | — | — | Mistakenly listed; not a MyAiFreedomSystems skill |
 | repo-audit | managed skills | **not ours — stock bundle** ("Git Forensics Contributors") | removed from site v7 | — | — | — | Mistakenly listed; restore only if the owner says it's theirs |

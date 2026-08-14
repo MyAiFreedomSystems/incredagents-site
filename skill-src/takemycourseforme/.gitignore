@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+*.log
+manifest.json
+tree.json
+captured/
+transcripts/
+downloads/
+screenshots/
+cliff-notes.md
+build-handoff.md
+cookies.txt
+.DS_Store

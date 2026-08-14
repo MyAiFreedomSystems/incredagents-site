@@ -7,6 +7,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- Take My Course For Me v1.0.0 published: [MyAiFreedomSystems/takemycourseforme](https://github.com/MyAiFreedomSystems/takemycourseforme)
+  with a GitHub release carrying the `.skill` zip (SKILL.md + 7 capture
+  scripts + ONBOARDING walkthrough). Extracts a paid Skool or Circle course
+  into ADHD-friendly cliff notes plus a build/implement handoff — live-Chrome
+  bridge (never headless), resumable manifest capture, transcript pipeline.
+  Full treatment: house-style icon (`skill-takemycourseforme.svg`), labeled
+  illustrative demo image, skill page, homepage card + index row, gallery card
+  under a new "Courses" category, MIT LICENSE, skills.sh indexing requested
+  (vercel-labs/skills#1963). Also installed to the Brain nucleus-canon
+  `.agent/skills/` for the Hermes team (index regenerated, skill #475).
+  QA subagent: SHIP on both the release and the page.
+- Site v28: the Take My Course For Me page (`site/skills/takemycourseforme.html`),
+  homepage pack-card + Skill Index row, gallery card, and the homepage
+  hooks-guide / provision-project GitHub links repointed to their standalone
+  repos (v26 only fixed the skill pages, not the homepage cards).
+  Snapshot in `versions/v28/`.
 - Site v27: the Shipped Skills gallery (`site/gallery.html`). Modeled on the
   owner's FreedomAIOS page-gallery format — kicker + title header, category
   filter pills with live count, card grid with per-skill icons, version badge,

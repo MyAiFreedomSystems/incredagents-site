@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0" stop-color="#1b3a5c"/><stop offset="1" stop-color="#122a45"/>
+</linearGradient></defs>
+<rect x="8" y="8" width="240" height="240" rx="52" fill="url(#bg)" stroke="#d9a441" stroke-width="6"/>
+
+  <!-- course video: rounded frame with play button -->
+  <rect x="48" y="52" width="92" height="68" rx="14" fill="none" stroke="#fafaf8" stroke-width="8"/>
+  <path d="M88 70 l30 16 -30 16 z" fill="#fafaf8"/>
+
+  <!-- extraction arrow -->
+  <path d="M146 86 h34" stroke="#d9a441" stroke-width="9" stroke-linecap="round"/>
+  <path d="M172 72 l22 14 -22 14 z" fill="#d9a441"/>
+
+  <!-- cliff notes: page with lines -->
+  <rect x="120" y="128" width="88" height="82" rx="12" fill="none" stroke="#fafaf8" stroke-width="8"/>
+  <path d="M138 152 h52 M138 170 h52 M138 188 h34" stroke="#fafaf8" stroke-width="8" stroke-linecap="round"/>
+  <path d="M60 148 l16 16 30 -34" fill="none" stroke="#d9a441" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
