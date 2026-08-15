@@ -1547,3 +1547,8 @@ body:not(:has(#hive)) footer { background: var(--navy-deep); }
 .ex-notes .tldr b { color: var(--gold); }
 .ex-notes ul { margin: 12px 0 0 18px; font-size: 14px; line-height: 1.6; color: var(--ink); }
 .ex-notes .handoff { margin-top: 12px; font: 800 12px/1.4 ui-monospace, SFMono-Regular, Menlo, monospace; color: var(--slate); }
+
+/* report header inside the notes card, modeled on the launchpad classroom lesson pages */
+.ex-report-head { background: var(--navy-deep); border-radius: 10px; padding: 12px 14px; margin-bottom: 12px; }
+.ex-report-eyebrow { color: var(--gold); font: 800 10px/1 ui-monospace, SFMono-Regular, Menlo, monospace; text-transform: uppercase; letter-spacing: 0.1em; }
+.ex-report-head h4 { color: var(--cream); font-family: var(--serif); font-size: 20px; margin-top: 4px; }

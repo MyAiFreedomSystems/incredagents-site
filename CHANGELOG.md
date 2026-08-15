@@ -6,6 +6,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+- Site v33: redaction, not obliteration. v31/v32 blurred the whole capture to
+  fog; the owner wanted only the identifying parts hidden — community/course
+  name and the course outline — with the lesson body readable so visitors
+  can tell it's a real classroom. New asset `ex-tmcf-source-circle.png`
+  (pixelate+blur boxes over the header name and sidebar outline only; QA
+  verified no glyph survives, including the bottom-right corner, while
+  "Lesson 3 of 49" and the lesson body stay readable). The notes card now
+  opens with the launchpad-classroom report header (navy band, gold mono
+  eyebrow, serif title), modeled on the real agent-built lesson pages at
+  WatchTower/public/classroom. All new section copy ran through the
+  humanizer skill: em dashes removed, bullets use colons, no AI vocabulary.
+  Standing rule restated: every word written for the site goes through
+  humanizer before it ships.
+
 ### Changed
 - Site v32: the v31 four-card blurred grid on Take My Course For Me read as
   three slabs of fog — the same blurred white rectangle repeated, doing no
